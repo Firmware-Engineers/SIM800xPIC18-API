@@ -21,8 +21,9 @@ This repository includes a demo Data Logger application (by implementing a light
 ![Demo Diagram](https://user-images.githubusercontent.com/56833496/228093675-567eda01-144b-449e-a2c9-35b34626fe87.png)
 ## Additional requirements for the demo
 - SIMCOM SIM800L-based board (ex. **SIM800L EVB**)
-- PIC18F based board (I used a custom-made prototyping board on which I mounted the PIC18F452 controller)
-- A USB to UART/USART converter (I used a FTDI 232R board) 
+- PIC18F based board (I used a custom-made prototyping board on which I mounted the **PIC18F452** controller)
+- A USB to UART/USART converter (I used a **FTDI 232R** board) 
+- PIC programmer/debugger (ex. **PICkit 3**)
 ## Software configurations
 - **Debug channel**
   * Baudrate: **9600, fixed**
