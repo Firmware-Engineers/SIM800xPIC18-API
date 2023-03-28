@@ -1,0 +1,19 @@
+ build/default/production/Src/ApplicationExample.d  \
+ build/default/production/Src/ApplicationExample.p1:  \
+ Src/ApplicationExample.c  \
+Src/../Inc/../../../../Libraries/LightJSONParser.X/Inc/JSON.h  \
+Src/../Inc/SIM800x_SDM.h  \
+Src/../Inc/SIM800x_GPRS.h  \
+Src/../Inc/../../../../M8M_APIs/PIC18.X/Inc/PIC18Types.h  \
+Src/../Inc/../../../../M8M_APIs/PIC18.X/Inc/GPIO.h  \
+Src/../../../../M8M_APIs/PIC18.X/Inc/../../../M8M_APIs/PIC18.X/Inc/GPIO.h  \
+Src/../Inc/SIM800x_CONFIG.h  \
+Src/../../../../M8M_APIs/PIC18.X/Inc/SoftwareUART.h  \
+Src/../Inc/ApplicationExample.h  \
+Src/../Inc/SIM800x_HTTP.h  \
+Src/../Inc/SIM800x_ID.h  \
+Src/../Inc/SIM800x_IP.h  \
+Src/../Inc/../../../../M8M_APIs/PIC18.X/Inc/SystemTime.h  \
+Src/../Inc/SIM800x_Types.h  \
+Src/../Inc/SIM800x.h  \
+Src/../Inc/../../../../M8M_APIs/PIC18.X/Inc/USART.h 
