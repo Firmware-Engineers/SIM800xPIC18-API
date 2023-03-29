@@ -58,7 +58,7 @@ extern "C" {
  *          with the MCU crystal frequency in megahertz, in the project settings.
  * @note    Modem baud rate has to be known prior to calling this function. The initialization will fail if 
  *          modem and controller baud rates are not synchronized.
- * @note    **Use a USB to TTL converter (ex. FT232R) and serial a terminal (ex. FLOTERM) to configure and save the modem baud rate.**
+ * @note    **Use a USB to TTL converter (ex. FT232R) and a serial terminal (ex. Tera Term) to configure and save the modem baud rate.**
  * @param   br: Modem communication baud rate (see @ref CONFIG_API_BAUDRATE_CONSTANTS)   
  * @retval  SIM800xStatusType
  * 
