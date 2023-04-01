@@ -60,10 +60,9 @@ extern "C" {
 #if defined(CONFIG_TARGET_ARCH_PIC18)
 #include "../../../../M8M_APIs/PIC18.X/Inc/USART.h"
 #include "../../../../M8M_APIs/PIC18.X/Inc/SystemTime.h"
-#include "../../../../M8M_APIs/PIC18.X/Inc/GPIO.h"    
-
+#include "../../../../M8M_APIs/PIC18.X/Inc/GPIO.h"  
 #if (CONFIG_ENABLE_DBG_SUART == 1) 
-#include "../../../../M8M_APIs/PIC18.X/Inc/SoftwareUART.h"
+#include "../../../../M8M_APIs/PIC18.X/Inc/SoftwareUART.h"    
 #endif
 #elif defined(CONFIG_TARGET_ARCH_AVRMEGA)
 #elif defined(CONFIG_TARGET_ARCH_STM32F4)

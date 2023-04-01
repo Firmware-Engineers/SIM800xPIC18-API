@@ -16,14 +16,14 @@
 ### Memory Usage ###
  Intel Hex-file ranges:
   0h - 5h		(dist/default/production\SIM800x.X.production.hex)
-  8h - 2183h		(dist/default/production\SIM800x.X.production.hex)
-  79B8h - 7FFFh		(dist/default/production\SIM800x.X.production.hex)
+  8h - 2181h		(dist/default/production\SIM800x.X.production.hex)
+  798Eh - 7FFEh		(dist/default/production\SIM800x.X.production.hex)
   200000h - 200007h		(dist/default/production\SIM800x.X.production.hex)
   300000h - 30000Dh		(dist/default/production\SIM800x.X.production.hex)
  Unused ranges:
   6h - 7h
-  2184h - 79B7h
-  8000h - 1FFFFFh
+  2182h - 798Dh
+  7FFFh - 1FFFFFh
   200008h - 2FFFFFh
 
 ### Hex Memory Map ###
@@ -569,9 +569,12 @@
 00002150 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00002160 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00002170 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00002180 | H1 H1 H1 H1 -- -- -- -- -- -- -- -- -- -- -- --
+00002180 | H1 H1 -- -- -- -- -- -- -- -- -- -- -- -- -- --
 ----------------------------------------------------------
-000079B0 | -- -- -- -- -- -- -- -- H1 H1 H1 H1 H1 H1 H1 H1
+00007980 | -- -- -- -- -- -- -- -- -- -- -- -- -- -- H1 H1
+00007990 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+000079A0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+000079B0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000079C0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000079D0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000079E0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
@@ -671,7 +674,7 @@
 00007FC0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00007FD0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00007FE0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00007FF0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00007FF0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 --
 ----------------------------------------------------------
 00200000 | H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- -- -- --
 ----------------------------------------------------------

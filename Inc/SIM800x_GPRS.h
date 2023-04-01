@@ -39,7 +39,7 @@ extern "C" {
 
 //-----------------------------------
 #include <stdlib.h>
-#include "SIM800x_Types.h"    
+#include "SIM800x_Types.h"   
 //-----------------------------------
 
 /**
@@ -48,24 +48,24 @@ extern "C" {
 typedef enum
 {
     //---------
-    DETACHED                    = 0,                                            //!< GPRS service detached 
-    ATTACHED                    = 1,                                            //!< GPRS service attached 
-    DEACTIVATED                 = 0,                                            //!< PDP context deactivated
-    ACTIVATED                   = 1,                                            //!< PDP context activated 
-    DISABLED                    = 0,                                            //!< Disabled
-    ENABLED                     = 1,                                            //!< Enabled
-    NOT_REGISTRED               = 0,                                            //!< Not registered
-    REGISTERED_HOME             = 1,                                            //!< Registered, home network
-    NOT_REGISTRED_SEARCHING     = 2,                                            //!< Not registered, searching
-    REGISTRATION_DENIED         = 3,                                            //!< Registration denied
-    UNKNOWN                     = 4,                                            //!< Unknown
-    REGISTRED_ROAMING           = 5,                                            //!< Registered, roaming
-    PACKET_DOMAIN               = 0,                                            //!< Packet Domain (GPRS)
-    CIRCUIT_SWITCHED            = 1,                                            //!< Circuit Switched Data Call (CSD)
-    PACKET_DOMAIN_PREFERRED     = 2,                                            //!< Packet Domain preferred (CSD used if GPRS not available)
-    CIRCUIT_SWITCHED_PREFERRED  = 3,                                            //!< Circuit Switched preferred (GPRS used if circuit switched not available)                    
-    GPRS_TIME_OUT               = 6,                                            //!< Time-out
-    GPRS_CME_ERROR              = 7,                                            //!< ME error        
+    GPRS_DETACHED                    	= 0,                                  	//!< GPRS service detached 
+    GPRS_ATTACHED                    	= 1,                                  	//!< GPRS service attached 
+    GPRS_DEACTIVATED                 	= 0,                                  	//!< PDP context deactivated
+    GPRS_ACTIVATED                   	= 1,                                   	//!< PDP context activated 
+    GPRS_DISABLED                    	= 0,                                 	//!< Disabled
+    GPRS_ENABLED                     	= 1,                                   	//!< Enabled
+    GPRS_NOT_REGISTRED               	= 0,                                  	//!< Not registered
+    GPRS_REGISTERED_HOME             	= 1,                                 	//!< Registered, home network
+    GPRS_NOT_REGISTRED_SEARCHING     	= 2,                                  	//!< Not registered, searching
+    GPRS_REGISTRATION_DENIED         	= 3,                                 	//!< Registration denied
+    GPRS_UNKNOWN                     	= 4,                                   	//!< Unknown
+    GPRS_REGISTRED_ROAMING           	= 5,                                   	//!< Registered, roaming
+    GPRS_PACKET_DOMAIN               	= 0,                                 	//!< Packet Domain (GPRS)
+    GPRS_CIRCUIT_SWITCHED            	= 1,                                 	//!< Circuit Switched Data Call (CSD)
+    GPRS_PACKET_DOMAIN_PREFERRED     	= 2,                                	//!< Packet Domain preferred (CSD used if GPRS not available)
+    GPRS_CIRCUIT_SWITCHED_PREFERRED  	= 3,                             		//!< Circuit Switched preferred (GPRS used if circuit switched not available)                    
+    GPRS_TIME_OUT               		= 6,                                  	//!< Time-out
+    GPRS_CME_ERROR              		= 7,                                   	//!< ME error        
     //---------        
 }SIM800xGPRSStatusType;
 //-----------------------------------    
@@ -76,8 +76,8 @@ typedef enum
  * @param       none      
  * @retval      SIM800xGPRSStatusType (See description). Supported values are:
  * 
- *              - ATTACHED: GPRS attached 
- *              - DETACHED: GPRS detached
+ *              - GPRS_ATTACHED: GPRS attached 
+ *              - GPRS_DETACHED: GPRS detached
  *              - GPRS_TIME_OUT: No response
  *  
  */ 
@@ -88,29 +88,29 @@ extern SIM800xGPRSStatusType SIM800xGPRSGetAttachState(void);
 /**
  * @brief       Attach GPRS service
  * @param[out]  errcode: CME_ERROR code (See description in SIM800x_Types.h)      
- * @retval      APIStatusType. Supported values are:
+ * @retval      SIM800x_APIStatusType. Supported values are:
  * 
- *              - OK: success 
- *              - TIME_OUT: time-out
- *              - ERROR: failed
- *              - CME_ERROR: ME error
+ *              - SIM800X_OK: success 
+ *              - SIM800X_TIME_OUT: time-out
+ *              - SIM800X_ERROR: failed
+ *              - SIM800X_CME_ERROR: ME error
  *  
  */ 
-extern APIStatusType SIM800xGPRSAttach(uint16_t* errcode);   
+extern SIM800x_APIStatusType SIM800xGPRSAttach(uint16_t* errcode);   
 //-----------------------------------
 
 //-----------------------------------    
 /**
  * @brief       Detach GPRS service
  * @param[out]  errcode: CME_ERROR code (See description in SIM800x_Types.h)      
- * @retval      APIStatusType. Supported values are:
+ * @retval      SIM800x_APIStatusType. Supported values are:
  * 
- *              - OK: success 
- *              - TIME_OUT: time-out
- *              - CME_ERROR: ME error
+ *              - SIM800X_OK: success 
+ *              - SIM800X_TIME_OUT: time-out
+ *              - SIM800X_CME_ERROR: ME error
  *  
  */ 
-extern APIStatusType SIM800xGPRSDetach(uint16_t* errcode);   
+extern SIM800x_APIStatusType SIM800xGPRSDetach(uint16_t* errcode);   
 //-----------------------------------
 
 //-----------------------------------    
@@ -121,13 +121,13 @@ extern APIStatusType SIM800xGPRSDetach(uint16_t* errcode);
  * 
  * @param[in]   apn: Access Point Name (null terminated string).
  * @note        **Maximum size for APN is 50 character.**
- * @retval      APIStatusType
+ * @retval      SIM800x_APIStatusType
  * 
- *              - OK: success 
- *              - TIME_OUT: no response from the modem
- *              - ERROR: failed  
+ *              - SIM800X_OK: success 
+ *              - SIM800X_TIME_OUT: no response from the modem
+ *              - SIM800X_ERROR: failed  
  */ 
-extern APIStatusType SIM800xGPRSSetPDPContext(uint8_t cid, const char* apn);  
+extern SIM800x_APIStatusType SIM800xGPRSSetPDPContext(uint8_t cid, const char* apn);  
 //-----------------------------------
 
 //-----------------------------------    
@@ -153,14 +153,14 @@ extern APIStatusType SIM800xGPRSSetPDPContext(uint8_t cid, const char* apn);
  * 
  * @param[out]  errcode: CME_ERROR code (See description in SIM800x_Types.h)
  *  
- * @retval      APIStatusType
+ * @retval      SIM800x_APIStatusType
  * 
- *              - OK: success 
- *              - TIME_OUT: time-out
- *              - CME_ERROR: ME error
+ *              - SIM800X_OK: success 
+ *              - SIM800X_TIME_OUT: time-out
+ *              - SIM800X_CME_ERROR: ME error
  *   
  */ 
-extern APIStatusType SIM800xGPRSSetQoSMin(uint8_t cid, uint8_t precedence, uint8_t delay, uint8_t reliability, uint8_t peak, uint8_t mean, uint16_t* errcode);  
+extern SIM800x_APIStatusType SIM800xGPRSSetQoSMin(uint8_t cid, uint8_t precedence, uint8_t delay, uint8_t reliability, uint8_t peak, uint8_t mean, uint16_t* errcode);  
 //-----------------------------------
 
 //-----------------------------------    
@@ -186,14 +186,14 @@ extern APIStatusType SIM800xGPRSSetQoSMin(uint8_t cid, uint8_t precedence, uint8
  * 
  * @param[out]  errcode: CME_ERROR code (See description in SIM800x_Types.h)
  *  
- * @retval      APIStatusType
+ * @retval      SIM800x_APIStatusType
  * 
- *              - OK: success 
- *              - TIME_OUT: time-out
- *              - CME_ERROR: ME error
+ *              - SIM800X_OK: success 
+ *              - SIM800X_TIME_OUT: time-out
+ *              - SIM800X_CME_ERROR: ME error
  *   
  */ 
-extern APIStatusType SIM800xGPRSSetQoSRequest(uint8_t cid, uint8_t precedence, uint8_t delay, uint8_t reliability, uint8_t peak, uint8_t mean, uint16_t* errcode);  
+extern SIM800x_APIStatusType SIM800xGPRSSetQoSRequest(uint8_t cid, uint8_t precedence, uint8_t delay, uint8_t reliability, uint8_t peak, uint8_t mean, uint16_t* errcode);  
 //-----------------------------------
 
 //-----------------------------------    
@@ -204,8 +204,8 @@ extern APIStatusType SIM800xGPRSSetQoSRequest(uint8_t cid, uint8_t precedence, u
  *     
  * @retval      SIM800xGPRSStatusType (See description). Supported values are:
  * 
- *              - ACTIVATED: PDP context activated
- *              - DEACTIVATED: PDP context deactivated
+ *              - GPRS_ACTIVATED: PDP context activated
+ *              - GPRS_DEACTIVATED: PDP context deactivated
  *              - GPRS_TIME_OUT: No response
  *  
  */ 
@@ -220,15 +220,15 @@ extern SIM800xGPRSStatusType SIM800xGPRSGetPDPContextState(uint8_t cid);
  * 
  * @param[out]  errcode: CME_ERROR code (See description in SIM800x_Types.h)
  *    
- * @retval      APIStatusType. Supported values are:
+ * @retval      SIM800x_APIStatusType. Supported values are:
  * 
- *              - OK: success 
- *              - TIME_OUT: time-out
- *              - ERROR: failed
- *              - CME_ERROR: ME error
+ *              - SIM800X_OK: success 
+ *              - SIM800X_TIME_OUT: time-out
+ *              - SIM800X_ERROR: failed
+ *              - SIM800X_CME_ERROR: ME error
  *  
  */ 
-extern APIStatusType SIM800xGPRSPDPContextActivate(uint8_t cid, uint16_t* errcode);   
+extern SIM800x_APIStatusType SIM800xGPRSPDPContextActivate(uint8_t cid, uint16_t* errcode);   
 //-----------------------------------
 
 //-----------------------------------    
@@ -239,15 +239,15 @@ extern APIStatusType SIM800xGPRSPDPContextActivate(uint8_t cid, uint16_t* errcod
  * 
  * @param[out]  errcode: CME_ERROR code (See description in SIM800x_Types.h)
  *       
- * @retval      APIStatusType. Supported values are:
+ * @retval      SIM800x_APIStatusType. Supported values are:
  * 
- *              - OK: success 
- *              - TIME_OUT: time-out
- *              - ERROR: failed    
- *              - CME_ERROR: ME error
+ *              - SIM800X_OK: success 
+ *              - SIM800X_TIME_OUT: time-out
+ *              - SIM800X_ERROR: failed    
+ *              - SIM800X_CME_ERROR: ME error
  *  
  */ 
-extern APIStatusType SIM800xGPRSPDPContextDeactivate(uint8_t cid, uint16_t* errcode);   
+extern SIM800x_APIStatusType SIM800xGPRSPDPContextDeactivate(uint8_t cid, uint16_t* errcode);   
 //-----------------------------------
 
 //-----------------------------------    
@@ -258,14 +258,14 @@ extern APIStatusType SIM800xGPRSPDPContextDeactivate(uint8_t cid, uint16_t* errc
  * 
  * @param[out]  errcode: CME_ERROR code (See description in SIM800x_Types.h) 
  *  
- * @retval      APIStatusType
+ * @retval      SIM800x_APIStatusType
  * 
- *              - OK: Data mode set 
- *              - TIME_OUT: no response 
- *              - CME_ERROR: ME error    
+ *              - SIM800X_OK: Data mode set 
+ *              - SIM800X_TIME_OUT: no response 
+ *              - SIM800X_CME_ERROR: ME error    
  *   
  */ 
-extern APIStatusType SIM800xGPRSSetDataMode(uint8_t cid, uint16_t* errcode);  
+extern SIM800x_APIStatusType SIM800xGPRSSetDataMode(uint8_t cid, uint16_t* errcode);  
 //-----------------------------------
 
 //-----------------------------------    
@@ -277,14 +277,14 @@ extern APIStatusType SIM800xGPRSSetDataMode(uint8_t cid, uint16_t* errcode);
  * @param[out]  ip: IP address (null terminated string).
  * @param       If the PDP context is not activated, a null address will be returned.     
  *    
- * @retval      APIStatusType
+ * @retval      SIM800x_APIStatusType
  * 
- *              - OK: success 
- *              - TIME_OUT: no response 
- *              - ERROR: failed
+ *              - SIM800X_OK: success 
+ *              - SIM800X_TIME_OUT: no response 
+ *              - SIM800X_ERROR: failed
  *   
  */ 
-extern APIStatusType SIM800xGPRSGetAddress(uint8_t cid, char* ip);  
+extern SIM800x_APIStatusType SIM800xGPRSGetAddress(uint8_t cid, char* ip);  
 //-----------------------------------
 
 //-----------------------------------    
@@ -295,13 +295,13 @@ extern APIStatusType SIM800xGPRSGetAddress(uint8_t cid, char* ip);
  *              - 2: MS Class CG
  *              - 3: MS Class CC
  *       
- * @retval      APIStatusType. Supported values are:
+ * @retval      SIM800x_APIStatusType. Supported values are:
  * 
- *              - OK: success 
- *              - TIME_OUT: time-out
+ *              - SIM800X_OK: success 
+ *              - SIM800X_TIME_OUT: time-out
  *  
  */ 
-extern APIStatusType SIM800xGPRSGetMTClass(uint8_t* mtclass);   
+extern SIM800x_APIStatusType SIM800xGPRSGetMTClass(uint8_t* mtclass);   
 //-----------------------------------
 
 //-----------------------------------    
@@ -314,14 +314,14 @@ extern APIStatusType SIM800xGPRSGetMTClass(uint8_t* mtclass);
  * 
  * @param[out]  errcode: CME_ERROR code (See description in SIM800x_Types.h) 
  *      
- * @retval      APIStatusType. Supported values are:
+ * @retval      SIM800x_APIStatusType. Supported values are:
  * 
- *              - OK: success 
- *              - TIME_OUT: time-out
- *              - CME_ERROR: ME error
+ *              - SIM800X_OK: success 
+ *              - SIM800X_TIME_OUT: time-out
+ *              - SIM800X_CME_ERROR: ME error
  *  
  */ 
-extern APIStatusType SIM800xGPRSSetMTClass(uint8_t mtclass, uint16_t* errcode);   
+extern SIM800x_APIStatusType SIM800xGPRSSetMTClass(uint8_t mtclass, uint16_t* errcode);   
 //-----------------------------------
 
 //-----------------------------------    
@@ -330,8 +330,8 @@ extern APIStatusType SIM800xGPRSSetMTClass(uint8_t mtclass, uint16_t* errcode);
  *    
  * @retval      SIM800xGPRSStatusType
  * 
- *              - ENABLED: GPRS UER enabled 
- *              - DISABLED: GPRS UER disabled 
+ *              - GPRS_ENABLED: GPRS UER enabled 
+ *              - GPRS_DISABLED: GPRS UER disabled 
  *              - GPRS_TIME_OUT: time-out
  * 
  */ 
@@ -348,14 +348,14 @@ extern SIM800xGPRSStatusType SIM800xGPRSUERGetMode(void);
  *              - 0: Disable
  *              - 1: Enable
  *   
- * @retval      APIStatusType
+ * @retval      SIM800x_APIStatusType
  * 
- *              - OK: success 
- *              - TIME_OUT: no response 
- *              - ERROR: failed  
+ *              - SIM800X_OK: success 
+ *              - SIM800X_TIME_OUT: no response 
+ *              - SIM800X_ERROR: failed  
  * 
  */ 
-extern APIStatusType SIM800xGPRSUERSetMode(uint8_t mode);  
+extern SIM800x_APIStatusType SIM800xGPRSUERSetMode(uint8_t mode);  
 //-----------------------------------
 
 //-----------------------------------    
@@ -365,14 +365,14 @@ extern APIStatusType SIM800xGPRSUERSetMode(uint8_t mode);
  *       
  * @retval      SIM800xGPRSStatusType. Supported values are:
  * 
- *              - NOT_REGISTRED: not registered 
- *              - REGISTERED_HOME: registered, home network.
- *              - NOT_REGISTRED_SEARCHING: searching for an operator to register to.
- *              - REGISTRATION_DENIED: GPRS disabled. Attachment not allowed.
- *              - UNKNOWN: unknown
- *              - REGISTRED_ROAMING: roaming
- *              - GPRS_TIME_OUT: time-out
- *              - GPRS_CME_ERROR: ME error  
+ *              - GPRS_NOT_REGISTRED: not registered 
+ *              - GPRS_REGISTERED_HOME: registered, home network.
+ *              - GPRS_NOT_REGISTRED_SEARCHING: searching for an operator to register to.
+ *              - GPRS_REGISTRATION_DENIED: GPRS disabled. Attachment not allowed.
+ *              - GPRS_UNKNOWN: unknown
+ *              - GPRS_REGISTRED_ROAMING: roaming
+ *              - GPRS_GPRS_TIME_OUT: time-out
+ *              - GPRS_GPRS_CME_ERROR: ME error  
  *  
  */ 
 extern SIM800xGPRSStatusType SIM800xGPRSGetNRegState(uint16_t* errcode);   
@@ -386,14 +386,14 @@ extern SIM800xGPRSStatusType SIM800xGPRSGetNRegState(uint16_t* errcode);
  *              - 1: Enable network registration URC
  *              - 2: Enable network registration and location information URC
  *       
- * @retval      APIStatusType. Supported values are:
+ * @retval      SIM800x_APIStatusType. Supported values are:
  * 
- *              - OK: success 
- *              - TIME_OUT: no response
- *              - ERROR: failed
+ *              - SIM800X_OK: success 
+ *              - SIM800X_TIME_OUT: no response
+ *              - SIM800X_ERROR: failed
  *  
  */ 
-extern APIStatusType SIM800xGPRSURCEnable(uint8_t urc);   
+extern SIM800x_APIStatusType SIM800xGPRSURCEnable(uint8_t urc);   
 //-----------------------------------
 
 //-----------------------------------    
@@ -402,10 +402,10 @@ extern APIStatusType SIM800xGPRSURCEnable(uint8_t urc);
  * @param       none      
  * @retval      SIM800xGPRSStatusType. Supported values are:
  * 
- *              - PACKET_DOMAIN: GPRS  
- *              - CIRCUIT_SWITCHED: CSD 
- *              - PACKET_DOMAIN_PREFERRED: GPRS preferred, CSD alternative
- *              - CIRCUIT_SWITCHED_PREFERRED: CSD preferred, GPRS alternative
+ *              - GPRS_PACKET_DOMAIN: GPRS  
+ *              - GPRS_CIRCUIT_SWITCHED: CSD 
+ *              - GPRS_PACKET_DOMAIN_PREFERRED: GPRS preferred, CSD alternative
+ *              - GPRS_CIRCUIT_SWITCHED_PREFERRED: CSD preferred, GPRS alternative
  *              - GPRS_TIME_OUT: time-out
  *  
  */ 
@@ -423,14 +423,14 @@ extern SIM800xGPRSStatusType SIM800xGPRSGetMOSMSService(void);
  *          
  * @param[out]  errcode: CME_ERROR code (See description in SIM800x_Types.h)
  *       
- * @retval      APIStatusType. Supported values are:
+ * @retval      SIM800x_APIStatusType. Supported values are:
  * 
- *              - OK: success 
- *              - TIME_OUT: no response
- *              - CME_ERROR: ME error
+ *              - SIM800X_OK: success 
+ *              - SIM800X_TIME_OUT: no response
+ *              - SIM800X_CME_ERROR: ME error
  *  
  */ 
-extern APIStatusType SIM800xGPRSSetMOSMSService(uint8_t service, uint16_t* errcode);   
+extern SIM800x_APIStatusType SIM800xGPRSSetMOSMSService(uint8_t service, uint16_t* errcode);   
 //-----------------------------------
 
 #ifdef	__cplusplus

@@ -49,10 +49,10 @@ extern "C" {
 typedef enum
 {
     //---------
-    CONNECTING          = 0,                                                    //!< Bearer connecting 
-    CONNECTED           = 1,                                                    //!< Bearer connected
-    CLOSING             = 2,                                                    //!< Bearer closing
-    CLOSED              = 3                                                     //!< Bearer closed       
+    IP_CONNECTING     		= 0,                                           		//!< Bearer connecting 
+    IP_CONNECTED           	= 1,                                             	//!< Bearer connected
+    IP_CLOSING              = 2,                                           		//!< Bearer closing
+    IP_CLOSED              	= 3                                             	//!< Bearer closed       
     //---------        
 }SIM800xIPStatusType;
 //-----------------------------------
@@ -67,13 +67,13 @@ typedef enum
  *              - "CSD"
  *              - "GPRS"   
  *    
- * @retval  APIStatusType
+ * @retval  SIM800x_APIStatusType
  * 
- *              - OK: success 
- *              - TIME_OUT: no response from the modem
- *              - ERROR: connection type error  
+ *              - SIM800X_OK: success 
+ *              - SIM800X_TIME_OUT: no response from the modem
+ *              - SIM800X_ERROR: connection type error  
  */ 
-extern APIStatusType SIM800xIPSetConnectionType(uint8_t cid, const char* contype);  
+extern SIM800x_APIStatusType SIM800xIPSetConnectionType(uint8_t cid, const char* contype);  
 //-----------------------------------
 
 //-----------------------------------    
@@ -84,13 +84,13 @@ extern APIStatusType SIM800xIPSetConnectionType(uint8_t cid, const char* contype
  * 
  * @param   apn: bearer APN (null terminated string).
  * @note    **Maximum size for APN is 64 character.** 
- * @retval  APIStatusType
+ * @retval  SIM800x_APIStatusType
  * 
- *              - OK: success 
- *              - TIME_OUT: no response from the modem
- *              - ERROR: APN error  
+ *              - SIM800X_OK: success 
+ *              - SIM800X_TIME_OUT: no response from the modem
+ *              - SIM800X_ERROR: APN error  
  */ 
-extern APIStatusType SIM800xIPSetAPN(uint8_t cid, const char* apn);  
+extern SIM800x_APIStatusType SIM800xIPSetAPN(uint8_t cid, const char* apn);  
 //-----------------------------------
 
 //-----------------------------------    
@@ -101,13 +101,13 @@ extern APIStatusType SIM800xIPSetAPN(uint8_t cid, const char* apn);
  * 
  * @param   user: bearer user (null terminated string).
  * @note    **Maximum size for USER is 32 character.**  
- * @retval  APIStatusType
+ * @retval  SIM800x_APIStatusType
  * 
- *              - OK: success 
- *              - TIME_OUT: no response from the modem
- *              - ERROR: user name error  
+ *              - SIM800X_OK: success 
+ *              - SIM800X_TIME_OUT: no response from the modem
+ *              - SIM800X_ERROR: user name error  
  */ 
-extern APIStatusType SIM800xIPSetUser(uint8_t cid, const char* user);  
+extern SIM800x_APIStatusType SIM800xIPSetUser(uint8_t cid, const char* user);  
 //-----------------------------------
 
 //-----------------------------------    
@@ -118,13 +118,13 @@ extern APIStatusType SIM800xIPSetUser(uint8_t cid, const char* user);
  * 
  * @param   pw: bearer password (null terminated string).
  * @note    **Maximum size for PW is 32 character.**
- * @retval  APIStatusType
+ * @retval  SIM800x_APIStatusType
  * 
- *              - OK: success 
- *              - TIME_OUT: no response from the modem
- *              - ERROR: password error  
+ *              - SIM800X_OK: success 
+ *              - SIM800X_TIME_OUT: no response from the modem
+ *              - SIM800X_ERROR: password error  
  */ 
-extern APIStatusType SIM800xIPSetPassword(uint8_t cid, const char* pw);  
+extern SIM800x_APIStatusType SIM800xIPSetPassword(uint8_t cid, const char* pw);  
 //-----------------------------------
 
 //-----------------------------------    
@@ -135,13 +135,13 @@ extern APIStatusType SIM800xIPSetPassword(uint8_t cid, const char* pw);
  * 
  * @param   pn: bearer CSD phone number (null terminated string).
  * @note    **Maximum size for PN is 20 character.** 
- * @retval  APIStatusType
+ * @retval  SIM800x_APIStatusType
  * 
- *              - OK: success 
- *              - TIME_OUT: no response from the modem
- *              - ERROR: phone number error  
+ *              - SIM800X_OK: success 
+ *              - SIM800X_TIME_OUT: no response from the modem
+ *              - SIM800X_ERROR: phone number error  
  */ 
-extern APIStatusType SIM800xIPSetPhoneNumber(uint8_t cid, const char* pn);  
+extern SIM800x_APIStatusType SIM800xIPSetPhoneNumber(uint8_t cid, const char* pn);  
 //-----------------------------------
 
 //-----------------------------------    
@@ -156,13 +156,13 @@ extern APIStatusType SIM800xIPSetPhoneNumber(uint8_t cid, const char* pn);
  *              - 9600
  *              - 14400    
  * 
- * @retval  APIStatusType
+ * @retval  SIM800x_APIStatusType
  * 
- *              - OK: success 
- *              - TIME_OUT: no response from the modem
- *              - ERROR: CSD rate error  
+ *              - SIM800X_OK: success 
+ *              - SIM800X_TIME_OUT: no response from the modem
+ *              - SIM800X_ERROR: CSD rate error  
  */ 
-extern APIStatusType SIM800xIPSetRate(uint8_t cid, uint16_t rate);  
+extern SIM800x_APIStatusType SIM800xIPSetRate(uint8_t cid, uint16_t rate);  
 //-----------------------------------
 
 //-----------------------------------    
@@ -171,13 +171,13 @@ extern APIStatusType SIM800xIPSetRate(uint8_t cid, uint16_t rate);
  * @param   cid: bearer context id. Supported values are:
  *              - [1...3]   
  *    
- * @retval  APIStatusType
+ * @retval  SIM800x_APIStatusType
  * 
- *              - OK: success 
- *              - TIME_OUT:  time-out
- *              - ERROR: failed 
+ *              - SIM800X_OK: success 
+ *              - SIM800X_TIME_OUT:  time-out
+ *              - SIM800X_ERROR: failed 
  */ 
-extern APIStatusType SIM800xIPOpen(uint8_t cid);  
+extern SIM800x_APIStatusType SIM800xIPOpen(uint8_t cid);  
 //-----------------------------------
 
 //-----------------------------------    
@@ -186,13 +186,13 @@ extern APIStatusType SIM800xIPOpen(uint8_t cid);
  * @param   cid: bearer context id. Supported values are:
  *              - [1...3]   
  *    
- * @retval  APIStatusType
+ * @retval  SIM800x_APIStatusType
  * 
- *              - OK: success 
- *              - TIME_OUT: time-out
- *              - ERROR: failed  
+ *              - SIM800X_OK: success 
+ *              - SIM800X_TIME_OUT: time-out
+ *              - SIM800X_ERROR: failed  
  */ 
-extern APIStatusType SIM800xIPClose(uint8_t cid);  
+extern SIM800x_APIStatusType SIM800xIPClose(uint8_t cid);  
 //-----------------------------------
 
 //-----------------------------------    
@@ -224,13 +224,13 @@ extern SIM800xIPStatusType SIM800xIPGetState(uint8_t cid, char* ip);
  * @param[out]  rate: CSD rate parameter 
  * 
  * @note        All the above parameters are null terminated strings. 
- * @retval      APIStatusType
+ * @retval      SIM800x_APIStatusType
  * 
- *              - OK: success 
- *              - TIME_OUT: time-out
+ *              - SIM800X_OK: success 
+ *              - SIM800X_TIME_OUT: time-out
  *   
  */ 
-extern APIStatusType SIM800xIPGetParameters(uint8_t cid, char* contype, char* apn, char* pn, char* user, char* pw, uint16_t* rate);  
+extern SIM800x_APIStatusType SIM800xIPGetParameters(uint8_t cid, char* contype, char* apn, char* pn, char* user, char* pw, uint16_t* rate);  
 //-----------------------------------
 
 #ifdef	__cplusplus

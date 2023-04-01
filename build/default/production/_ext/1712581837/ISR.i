@@ -3926,7 +3926,7 @@ extern void SoftUARTFlushRx(void);
 #pragma intrinsic(_SoftUARTCallBack)
 extern void SoftUARTCallBack(void);
 
-# 195 "C:/EmbeddedDevOps/M8M_APIs/PIC18.X/Src/../../../Application/SIM800xDemo.X/Inc/../../../M8M_APIs/PIC18.X/Inc/USART.h"
+# 195 "C:/EmbeddedDevOps/M8M_APIs/PIC18.X/Src/../../../WWM_APIs/SIMCOM/SIM800x.X/Inc/../../../../M8M_APIs/PIC18.X/Inc/USART.h"
 extern void USARTSetBGR(uint8_t bgr);
 
 # 219
@@ -3962,56 +3962,443 @@ extern uint16_t USARTReceiveBytes(uint8_t *data, uint16_t cnt, uint32_t tout);
 # 363
 extern uint16_t USARTReceiveBytes9(uint16_t *data, uint16_t cnt, uint32_t tout);
 
-# 108 "C:/EmbeddedDevOps/M8M_APIs/PIC18.X/Src/../../../Application/SIM800xDemo.X/Inc/SIM800x_SDM.h"
+# 107 "C:/EmbeddedDevOps/M8M_APIs/PIC18.X/Src/../../../WWM_APIs/SIMCOM/SIM800x.X/Inc/SIM800x_SDM.h"
 extern void SIM800xSDMInit(uint32_t br);
 
-# 118
+# 117
 extern void SIM800xSDMResume(void);
 
-# 129
+# 128
 extern void SIM800xSDMSuspend(void);
 
-# 141
+# 140
 extern uint8_t SIM800xSDMIsSuspended(void);
 
-# 151
+# 150
 extern uint16_t SIM800xSDMRxAvailable(void);
 
-# 161
+# 160
 extern void SIM800xSDMSendByte(uint8_t data);
 
-# 172
+# 171
 extern void SIM800xSDMSendBytes(uint8_t *data, uint16_t cnt);
 
-# 182
+# 181
 extern void SIM800xSDMPrint(const char *str);
 
-# 195
+# 194
 extern uint8_t SIM800xSDMReadByte(void);
 
-# 208
+# 207
 extern uint16_t SIM800xSDMReadBytes(uint8_t *data, uint16_t cnt, uint32_t tout);
 
-# 223
+# 222
 extern uint8_t SIM800xSDMPeek(uint8_t idx);
 
-# 239
+# 238
 extern int SIM800xSDMReadF1Pkt(uint8_t *data);
 
-# 255
+# 254
 extern int SIM800xSDMReadF2Pkt(uint8_t *data);
 
-# 264
+# 263
 extern void SIM800xSDMFlush(void);
 
-# 276
+# 275
 extern void SIM800xSDMSetTimeOut(uint32_t tout);
 
-# 285
+# 284
 extern uint32_t SIM800xSDMGetTimeOut(void);
 
-# 297
+# 296
 extern void SIM800xSDMCallBack(void);
+
+# 41 "C:/EmbeddedDevOps/M8M_APIs/PIC18.X/Src/../../../WWM_APIs/SIMCOM/SIM800x.X/Inc/SIM800x_Types.h"
+typedef enum
+{
+
+SIM800X_OK = 0,
+SIM800X_ERROR = 1,
+SIM800X_CME_ERROR = 2,
+SIM800X_CMS_ERROR = 3,
+SIM800X_BR_ERROR = 4,
+SIM800X_TIME_OUT = 5,
+SIM800X_READY = 6,
+SIM800X_BUSY = 7,
+SIM800X_NOT_DEFINED = 8,
+SIM800X_INVALID_RESPONSE = 9
+
+}SIM800x_APIStatusType;
+
+# 4 "C:\Program Files\Microchip\xc8\v2.36\pic\include\__size_t.h"
+typedef unsigned size_t;
+
+# 7 "C:\Program Files\Microchip\xc8\v2.36\pic\include\c90\stdlib.h"
+typedef unsigned short wchar_t;
+
+# 15
+typedef struct {
+int rem;
+int quot;
+} div_t;
+typedef struct {
+unsigned rem;
+unsigned quot;
+} udiv_t;
+typedef struct {
+long quot;
+long rem;
+} ldiv_t;
+typedef struct {
+unsigned long quot;
+unsigned long rem;
+} uldiv_t;
+
+# 65
+extern double atof(const char *);
+extern double strtod(const char *, const char **);
+extern int atoi(const char *);
+extern unsigned xtoi(const char *);
+extern long atol(const char *);
+
+# 73
+extern long strtol(const char *, char **, int);
+
+extern int rand(void);
+extern void srand(unsigned int);
+extern void * calloc(size_t, size_t);
+extern div_t div(int numer, int denom);
+extern udiv_t udiv(unsigned numer, unsigned denom);
+extern ldiv_t ldiv(long numer, long denom);
+extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
+
+# 85
+extern unsigned long _lrotl(unsigned long value, unsigned int shift);
+extern unsigned long _lrotr(unsigned long value, unsigned int shift);
+extern unsigned int _rotl(unsigned int value, unsigned int shift);
+extern unsigned int _rotr(unsigned int value, unsigned int shift);
+
+
+
+
+extern void * malloc(size_t);
+extern void free(void *);
+extern void * realloc(void *, size_t);
+
+# 104
+extern int atexit(void (*)(void));
+extern char * getenv(const char *);
+extern char ** environ;
+extern int system(char *);
+extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
+extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
+extern int abs(int);
+extern long labs(long);
+
+extern char * itoa(char * buf, int val, int base);
+extern char * utoa(char * buf, unsigned val, int base);
+
+
+
+
+extern char * ltoa(char * buf, long val, int base);
+extern char * ultoa(char * buf, unsigned long val, int base);
+
+extern char * ftoa(float f, int * status);
+
+# 71 "C:/EmbeddedDevOps/M8M_APIs/PIC18.X/Src/../../../WWM_APIs/SIMCOM/SIM800x.X/Inc/SIM800x_ID.h"
+extern SIM800x_APIStatusType SIM800xGetManufacturerID(char * id);
+
+# 87
+extern SIM800x_APIStatusType SIM800xGetModelID(char * id);
+
+# 103
+extern SIM800x_APIStatusType SIM800xGetSoftwareRevisionID(char * id);
+
+# 119
+extern SIM800x_APIStatusType SIM800xGetGlobalObjectID(char * id);
+
+# 135
+extern SIM800x_APIStatusType SIM800xGetIMEI(char * id);
+
+# 151
+extern SIM800x_APIStatusType SIM800xGetProductID(char * id);
+
+# 169
+extern SIM800x_APIStatusType SIM800xGetIMSI(char * id, uint16_t* errcode);
+
+# 49 "C:/EmbeddedDevOps/M8M_APIs/PIC18.X/Src/../../../WWM_APIs/SIMCOM/SIM800x.X/Inc/SIM800x_IP.h"
+typedef enum
+{
+
+IP_CONNECTING = 0,
+IP_CONNECTED = 1,
+IP_CLOSING = 2,
+IP_CLOSED = 3
+
+}SIM800xIPStatusType;
+
+# 76
+extern SIM800x_APIStatusType SIM800xIPSetConnectionType(uint8_t cid, const char* contype);
+
+# 93
+extern SIM800x_APIStatusType SIM800xIPSetAPN(uint8_t cid, const char* apn);
+
+# 110
+extern SIM800x_APIStatusType SIM800xIPSetUser(uint8_t cid, const char* user);
+
+# 127
+extern SIM800x_APIStatusType SIM800xIPSetPassword(uint8_t cid, const char* pw);
+
+# 144
+extern SIM800x_APIStatusType SIM800xIPSetPhoneNumber(uint8_t cid, const char* pn);
+
+# 165
+extern SIM800x_APIStatusType SIM800xIPSetRate(uint8_t cid, uint16_t rate);
+
+# 180
+extern SIM800x_APIStatusType SIM800xIPOpen(uint8_t cid);
+
+# 195
+extern SIM800x_APIStatusType SIM800xIPClose(uint8_t cid);
+
+# 210
+extern SIM800xIPStatusType SIM800xIPGetState(uint8_t cid, char* ip);
+
+# 233
+extern SIM800x_APIStatusType SIM800xIPGetParameters(uint8_t cid, char* contype, char* apn, char* pn, char* user, char* pw, uint16_t* rate);
+
+# 48 "C:/EmbeddedDevOps/M8M_APIs/PIC18.X/Src/../../../WWM_APIs/SIMCOM/SIM800x.X/Inc/SIM800x_GPRS.h"
+typedef enum
+{
+
+GPRS_DETACHED = 0,
+GPRS_ATTACHED = 1,
+GPRS_DEACTIVATED = 0,
+GPRS_ACTIVATED = 1,
+GPRS_DISABLED = 0,
+GPRS_ENABLED = 1,
+GPRS_NOT_REGISTRED = 0,
+GPRS_REGISTERED_HOME = 1,
+GPRS_NOT_REGISTRED_SEARCHING = 2,
+GPRS_REGISTRATION_DENIED = 3,
+GPRS_UNKNOWN = 4,
+GPRS_REGISTRED_ROAMING = 5,
+GPRS_PACKET_DOMAIN = 0,
+GPRS_CIRCUIT_SWITCHED = 1,
+GPRS_PACKET_DOMAIN_PREFERRED = 2,
+GPRS_CIRCUIT_SWITCHED_PREFERRED = 3,
+GPRS_TIME_OUT = 6,
+GPRS_CME_ERROR = 7,
+
+}SIM800xGPRSStatusType;
+
+# 84
+extern SIM800xGPRSStatusType SIM800xGPRSGetAttachState(void);
+
+# 99
+extern SIM800x_APIStatusType SIM800xGPRSAttach(uint16_t* errcode);
+
+# 113
+extern SIM800x_APIStatusType SIM800xGPRSDetach(uint16_t* errcode);
+
+# 130
+extern SIM800x_APIStatusType SIM800xGPRSSetPDPContext(uint8_t cid, const char* apn);
+
+# 163
+extern SIM800x_APIStatusType SIM800xGPRSSetQoSMin(uint8_t cid, uint8_t precedence, uint8_t delay, uint8_t reliability, uint8_t peak, uint8_t mean, uint16_t* errcode);
+
+# 196
+extern SIM800x_APIStatusType SIM800xGPRSSetQoSRequest(uint8_t cid, uint8_t precedence, uint8_t delay, uint8_t reliability, uint8_t peak, uint8_t mean, uint16_t* errcode);
+
+# 212
+extern SIM800xGPRSStatusType SIM800xGPRSGetPDPContextState(uint8_t cid);
+
+# 231
+extern SIM800x_APIStatusType SIM800xGPRSPDPContextActivate(uint8_t cid, uint16_t* errcode);
+
+# 250
+extern SIM800x_APIStatusType SIM800xGPRSPDPContextDeactivate(uint8_t cid, uint16_t* errcode);
+
+# 268
+extern SIM800x_APIStatusType SIM800xGPRSSetDataMode(uint8_t cid, uint16_t* errcode);
+
+# 287
+extern SIM800x_APIStatusType SIM800xGPRSGetAddress(uint8_t cid, char* ip);
+
+# 304
+extern SIM800x_APIStatusType SIM800xGPRSGetMTClass(uint8_t* mtclass);
+
+# 324
+extern SIM800x_APIStatusType SIM800xGPRSSetMTClass(uint8_t mtclass, uint16_t* errcode);
+
+# 338
+extern SIM800xGPRSStatusType SIM800xGPRSUERGetMode(void);
+
+# 358
+extern SIM800x_APIStatusType SIM800xGPRSUERSetMode(uint8_t mode);
+
+# 378
+extern SIM800xGPRSStatusType SIM800xGPRSGetNRegState(uint16_t* errcode);
+
+# 396
+extern SIM800x_APIStatusType SIM800xGPRSURCEnable(uint8_t urc);
+
+# 412
+extern SIM800xGPRSStatusType SIM800xGPRSGetMOSMSService(void);
+
+# 433
+extern SIM800x_APIStatusType SIM800xGPRSSetMOSMSService(uint8_t service, uint16_t* errcode);
+
+# 58 "C:/EmbeddedDevOps/M8M_APIs/PIC18.X/Src/../../../WWM_APIs/SIMCOM/SIM800x.X/Inc/SIM800x_HTTP.h"
+extern SIM800x_APIStatusType SIM800xHTTPInit(uint16_t* errcode);
+
+# 73
+extern SIM800x_APIStatusType SIM800xHTTPTerminate(uint16_t* errcode);
+
+# 91
+extern SIM800x_APIStatusType SIM800xHTTPSetCID(uint8_t cid, uint16_t* errcode);
+
+# 111
+extern SIM800x_APIStatusType SIM800xHTTPSetURL(const char* url, uint16_t* errcode);
+
+# 131
+extern SIM800x_APIStatusType SIM800xHTTPSetUA(const char* ua, uint16_t* errcode);
+
+# 150
+extern SIM800x_APIStatusType SIM800xHTTPSetIP(const char* proip, uint16_t* errcode);
+
+# 168
+extern SIM800x_APIStatusType SIM800xHTTPSetPort(uint16_t proport, uint16_t* errcode);
+
+# 190
+extern SIM800x_APIStatusType SIM800xHTTPSetRedir(uint8_t redir, uint16_t* errcode);
+
+# 208
+extern SIM800x_APIStatusType SIM800xHTTPSetBreak(uint32_t _break, uint16_t* errcode);
+
+# 226
+extern SIM800x_APIStatusType SIM800xHTTPSetBreakEnd(uint32_t breakend, uint16_t* errcode);
+
+# 246
+extern SIM800x_APIStatusType SIM800xHTTPSetTimeout(uint16_t timeout, uint16_t* errcode);
+
+# 265
+extern SIM800x_APIStatusType SIM800xHTTPSetContent(const char* content, uint16_t* errcode);
+
+# 284
+extern SIM800x_APIStatusType SIM800xHTTPSetUserData(const char* userdata, uint16_t* errcode);
+
+# 310
+extern SIM800x_APIStatusType SIM800xHTTPInputData(char *data, uint32_t cnt, uint32_t timeout, uint16_t* errcode);
+
+# 338
+extern SIM800x_APIStatusType SIM800xHTTPAction(uint8_t method, uint16_t* statuscode, uint32_t* cnt, uint32_t tout, uint16_t* errcode);
+
+# 366
+extern SIM800x_APIStatusType SIM800xHTTPRead(char* data, uint32_t strindex, uint32_t size, uint32_t* cnt, uint16_t* errcode);
+
+# 395
+extern SIM800x_APIStatusType SIM800xHTTPSaveAppContext(uint16_t* errcode);
+
+# 424
+extern SIM800x_APIStatusType SIM800xHTTPReadState(uint8_t* method, uint8_t* state, uint32_t* finish, uint32_t* remain, uint16_t* errcode);
+
+# 444
+extern SIM800x_APIStatusType SIM800xHTTPReadHeader(char *data, uint32_t* cnt, uint16_t* errcode);
+
+# 465
+extern SIM800x_APIStatusType SIM800xHTTPShowHeader(uint8_t option, uint16_t* errcode);
+
+# 57 "C:/EmbeddedDevOps/M8M_APIs/PIC18.X/Src/../../../WWM_APIs/SIMCOM/SIM800x.X/Inc/SIM800x_3GPPTS270057.h"
+extern SIM800x_APIStatusType SIM800x3GPPGetOperatorName(char *name, uint16_t* errcode);
+
+# 83
+extern SIM800x_APIStatusType SIM800x3GPPGetSignalQuality(uint8_t *rssi, uint8_t *ber, uint16_t* errcode);
+
+# 101
+extern SIM800x_APIStatusType SIM800x3GPPGetSubscriberNumber(char *num, uint16_t* errcode);
+
+# 7 "C:\Program Files\Microchip\xc8\v2.36\pic\include\c90\stdarg.h"
+typedef void * va_list[1];
+
+#pragma intrinsic(__va_start)
+extern void * __va_start(void);
+
+#pragma intrinsic(__va_arg)
+extern void * __va_arg(void *, ...);
+
+# 43 "C:\Program Files\Microchip\xc8\v2.36\pic\include\c90\stdio.h"
+struct __prbuf
+{
+char * ptr;
+void (* func)(char);
+};
+
+# 29 "C:\Program Files\Microchip\xc8\v2.36\pic\include\c90\errno.h"
+extern int errno;
+
+# 12 "C:\Program Files\Microchip\xc8\v2.36\pic\include\c90\conio.h"
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+# 23
+extern char * cgets(char *);
+extern void cputs(const char *);
+
+# 88 "C:\Program Files\Microchip\xc8\v2.36\pic\include\c90\stdio.h"
+extern int cprintf(char *, ...);
+#pragma printf_check(cprintf)
+
+
+
+extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+
+
+# 180
+#pragma printf_check(vprintf) const
+#pragma printf_check(vsprintf) const
+
+extern char * gets(char *);
+extern int puts(const char *);
+extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+
+#pragma printf_check(printf) const
+#pragma printf_check(sprintf) const
+extern int sprintf(char *, const char *, ...);
+extern int printf(const char *, ...);
+
+# 73 "C:/EmbeddedDevOps/M8M_APIs/PIC18.X/Src/../../../WWM_APIs/SIMCOM/SIM800x.X/Inc/SIM800x.h"
+extern SIM800x_APIStatusType SIM800xInit(uint32_t br);
+
+# 91
+extern SIM800x_APIStatusType SIM800xReset(void);
+
+# 107
+extern SIM800x_APIStatusType SIM800xPWROn(void);
+
+# 123
+extern SIM800x_APIStatusType SIM800xPWROff(void);
+
+# 140
+extern SIM800x_APIStatusType SIM800xSetBaudRate(uint32_t br);
+
+# 155
+extern SIM800x_APIStatusType SIM800xGetState(void);
+
+# 173
+extern SIM800x_APIStatusType SIM800xOff(void);
 
 # 65 "C:/EmbeddedDevOps/M8M_APIs/PIC18.X/Src/ISR.c"
 void interrupt Isr(void)

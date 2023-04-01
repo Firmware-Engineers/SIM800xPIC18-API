@@ -8,6 +8,7 @@ The current version of this software includes the following APIs:
 - IP
 - Modem control
 - ID number
+- Some 3GPP TS 27.005/7 API functions 
 ## Notes 
 Subsequent versions targeting AVR and STM32 architectures will be created overtime. All source files are self-documenting and doxygen compatible, so a full and efficient API documentation can be generated. The diagram below shows the API architecture.
 ![WWAN API Architecture](https://user-images.githubusercontent.com/56833496/228084512-9d896a2e-55bf-46ae-9788-7c86f418de86.png)

@@ -3903,73 +3903,73 @@ extern void SysTimeSuspend(void);
 # 134
 extern void SysTimeResume(void);
 
-# 108 "Src/../Inc/SIM800x_SDM.h"
+# 107 "Src/../Inc/SIM800x_SDM.h"
 extern void SIM800xSDMInit(uint32_t br);
 
-# 118
+# 117
 extern void SIM800xSDMResume(void);
 
-# 129
+# 128
 extern void SIM800xSDMSuspend(void);
 
-# 141
+# 140
 extern uint8_t SIM800xSDMIsSuspended(void);
 
-# 151
+# 150
 extern uint16_t SIM800xSDMRxAvailable(void);
 
-# 161
+# 160
 extern void SIM800xSDMSendByte(uint8_t data);
 
-# 172
+# 171
 extern void SIM800xSDMSendBytes(uint8_t *data, uint16_t cnt);
 
-# 182
+# 181
 extern void SIM800xSDMPrint(const char *str);
 
-# 195
+# 194
 extern uint8_t SIM800xSDMReadByte(void);
 
-# 208
+# 207
 extern uint16_t SIM800xSDMReadBytes(uint8_t *data, uint16_t cnt, uint32_t tout);
 
-# 223
+# 222
 extern uint8_t SIM800xSDMPeek(uint8_t idx);
 
-# 239
+# 238
 extern int SIM800xSDMReadF1Pkt(uint8_t *data);
 
-# 255
+# 254
 extern int SIM800xSDMReadF2Pkt(uint8_t *data);
 
-# 264
+# 263
 extern void SIM800xSDMFlush(void);
 
-# 276
+# 275
 extern void SIM800xSDMSetTimeOut(uint32_t tout);
 
-# 285
+# 284
 extern uint32_t SIM800xSDMGetTimeOut(void);
 
-# 297
+# 296
 extern void SIM800xSDMCallBack(void);
 
 # 41 "Src/../Inc/SIM800x_Types.h"
 typedef enum
 {
 
-OK = 0,
-ERROR = 1,
-CME_ERROR = 2,
-CMS_ERROR = 3,
-BR_ERROR = 4,
-TIME_OUT = 5,
-READY = 6,
-BUSY = 7,
-NOT_DEFINED = 8,
-INVALID_RESPONSE = 9
+SIM800X_OK = 0,
+SIM800X_ERROR = 1,
+SIM800X_CME_ERROR = 2,
+SIM800X_CMS_ERROR = 3,
+SIM800X_BR_ERROR = 4,
+SIM800X_TIME_OUT = 5,
+SIM800X_READY = 6,
+SIM800X_BUSY = 7,
+SIM800X_NOT_DEFINED = 8,
+SIM800X_INVALID_RESPONSE = 9
 
-}APIStatusType;
+}SIM800x_APIStatusType;
 
 # 4 "C:\Program Files\Microchip\xc8\v2.36\pic\include\__size_t.h"
 typedef unsigned size_t;
@@ -4047,82 +4047,88 @@ extern char * ultoa(char * buf, unsigned long val, int base);
 
 extern char * ftoa(float f, int * status);
 
-# 66 "Src/../Inc/SIM800x_ID.h"
-extern APIStatusType SIM800xGetManufacturerID(char * id);
+# 71 "Src/../Inc/SIM800x_ID.h"
+extern SIM800x_APIStatusType SIM800xGetManufacturerID(char * id);
 
-# 82
-extern APIStatusType SIM800xGetModelID(char * id);
+# 87
+extern SIM800x_APIStatusType SIM800xGetModelID(char * id);
 
-# 98
-extern APIStatusType SIM800xGetSoftwareRevisionID(char * id);
+# 103
+extern SIM800x_APIStatusType SIM800xGetSoftwareRevisionID(char * id);
 
-# 114
-extern APIStatusType SIM800xGetGlobalObjectID(char * id);
+# 119
+extern SIM800x_APIStatusType SIM800xGetGlobalObjectID(char * id);
 
-# 130
-extern APIStatusType SIM800xGetIMEI(char * id);
+# 135
+extern SIM800x_APIStatusType SIM800xGetIMEI(char * id);
+
+# 151
+extern SIM800x_APIStatusType SIM800xGetProductID(char * id);
+
+# 169
+extern SIM800x_APIStatusType SIM800xGetIMSI(char * id, uint16_t* errcode);
 
 # 49 "Src/../Inc/SIM800x_IP.h"
 typedef enum
 {
 
-CONNECTING = 0,
-CONNECTED = 1,
-CLOSING = 2,
-CLOSED = 3
+IP_CONNECTING = 0,
+IP_CONNECTED = 1,
+IP_CLOSING = 2,
+IP_CLOSED = 3
 
 }SIM800xIPStatusType;
 
 # 76
-extern APIStatusType SIM800xIPSetConnectionType(uint8_t cid, const char* contype);
+extern SIM800x_APIStatusType SIM800xIPSetConnectionType(uint8_t cid, const char* contype);
 
 # 93
-extern APIStatusType SIM800xIPSetAPN(uint8_t cid, const char* apn);
+extern SIM800x_APIStatusType SIM800xIPSetAPN(uint8_t cid, const char* apn);
 
 # 110
-extern APIStatusType SIM800xIPSetUser(uint8_t cid, const char* user);
+extern SIM800x_APIStatusType SIM800xIPSetUser(uint8_t cid, const char* user);
 
 # 127
-extern APIStatusType SIM800xIPSetPassword(uint8_t cid, const char* pw);
+extern SIM800x_APIStatusType SIM800xIPSetPassword(uint8_t cid, const char* pw);
 
 # 144
-extern APIStatusType SIM800xIPSetPhoneNumber(uint8_t cid, const char* pn);
+extern SIM800x_APIStatusType SIM800xIPSetPhoneNumber(uint8_t cid, const char* pn);
 
 # 165
-extern APIStatusType SIM800xIPSetRate(uint8_t cid, uint16_t rate);
+extern SIM800x_APIStatusType SIM800xIPSetRate(uint8_t cid, uint16_t rate);
 
 # 180
-extern APIStatusType SIM800xIPOpen(uint8_t cid);
+extern SIM800x_APIStatusType SIM800xIPOpen(uint8_t cid);
 
 # 195
-extern APIStatusType SIM800xIPClose(uint8_t cid);
+extern SIM800x_APIStatusType SIM800xIPClose(uint8_t cid);
 
 # 210
 extern SIM800xIPStatusType SIM800xIPGetState(uint8_t cid, char* ip);
 
 # 233
-extern APIStatusType SIM800xIPGetParameters(uint8_t cid, char* contype, char* apn, char* pn, char* user, char* pw, uint16_t* rate);
+extern SIM800x_APIStatusType SIM800xIPGetParameters(uint8_t cid, char* contype, char* apn, char* pn, char* user, char* pw, uint16_t* rate);
 
 # 48 "Src/../Inc/SIM800x_GPRS.h"
 typedef enum
 {
 
-DETACHED = 0,
-ATTACHED = 1,
-DEACTIVATED = 0,
-ACTIVATED = 1,
-DISABLED = 0,
-ENABLED = 1,
-NOT_REGISTRED = 0,
-REGISTERED_HOME = 1,
-NOT_REGISTRED_SEARCHING = 2,
-REGISTRATION_DENIED = 3,
-UNKNOWN = 4,
-REGISTRED_ROAMING = 5,
-PACKET_DOMAIN = 0,
-CIRCUIT_SWITCHED = 1,
-PACKET_DOMAIN_PREFERRED = 2,
-CIRCUIT_SWITCHED_PREFERRED = 3,
+GPRS_DETACHED = 0,
+GPRS_ATTACHED = 1,
+GPRS_DEACTIVATED = 0,
+GPRS_ACTIVATED = 1,
+GPRS_DISABLED = 0,
+GPRS_ENABLED = 1,
+GPRS_NOT_REGISTRED = 0,
+GPRS_REGISTERED_HOME = 1,
+GPRS_NOT_REGISTRED_SEARCHING = 2,
+GPRS_REGISTRATION_DENIED = 3,
+GPRS_UNKNOWN = 4,
+GPRS_REGISTRED_ROAMING = 5,
+GPRS_PACKET_DOMAIN = 0,
+GPRS_CIRCUIT_SWITCHED = 1,
+GPRS_PACKET_DOMAIN_PREFERRED = 2,
+GPRS_CIRCUIT_SWITCHED_PREFERRED = 3,
 GPRS_TIME_OUT = 6,
 GPRS_CME_ERROR = 7,
 
@@ -4132,118 +4138,127 @@ GPRS_CME_ERROR = 7,
 extern SIM800xGPRSStatusType SIM800xGPRSGetAttachState(void);
 
 # 99
-extern APIStatusType SIM800xGPRSAttach(uint16_t* errcode);
+extern SIM800x_APIStatusType SIM800xGPRSAttach(uint16_t* errcode);
 
 # 113
-extern APIStatusType SIM800xGPRSDetach(uint16_t* errcode);
+extern SIM800x_APIStatusType SIM800xGPRSDetach(uint16_t* errcode);
 
 # 130
-extern APIStatusType SIM800xGPRSSetPDPContext(uint8_t cid, const char* apn);
+extern SIM800x_APIStatusType SIM800xGPRSSetPDPContext(uint8_t cid, const char* apn);
 
 # 163
-extern APIStatusType SIM800xGPRSSetQoSMin(uint8_t cid, uint8_t precedence, uint8_t delay, uint8_t reliability, uint8_t peak, uint8_t mean, uint16_t* errcode);
+extern SIM800x_APIStatusType SIM800xGPRSSetQoSMin(uint8_t cid, uint8_t precedence, uint8_t delay, uint8_t reliability, uint8_t peak, uint8_t mean, uint16_t* errcode);
 
 # 196
-extern APIStatusType SIM800xGPRSSetQoSRequest(uint8_t cid, uint8_t precedence, uint8_t delay, uint8_t reliability, uint8_t peak, uint8_t mean, uint16_t* errcode);
+extern SIM800x_APIStatusType SIM800xGPRSSetQoSRequest(uint8_t cid, uint8_t precedence, uint8_t delay, uint8_t reliability, uint8_t peak, uint8_t mean, uint16_t* errcode);
 
 # 212
 extern SIM800xGPRSStatusType SIM800xGPRSGetPDPContextState(uint8_t cid);
 
 # 231
-extern APIStatusType SIM800xGPRSPDPContextActivate(uint8_t cid, uint16_t* errcode);
+extern SIM800x_APIStatusType SIM800xGPRSPDPContextActivate(uint8_t cid, uint16_t* errcode);
 
 # 250
-extern APIStatusType SIM800xGPRSPDPContextDeactivate(uint8_t cid, uint16_t* errcode);
+extern SIM800x_APIStatusType SIM800xGPRSPDPContextDeactivate(uint8_t cid, uint16_t* errcode);
 
 # 268
-extern APIStatusType SIM800xGPRSSetDataMode(uint8_t cid, uint16_t* errcode);
+extern SIM800x_APIStatusType SIM800xGPRSSetDataMode(uint8_t cid, uint16_t* errcode);
 
 # 287
-extern APIStatusType SIM800xGPRSGetAddress(uint8_t cid, char* ip);
+extern SIM800x_APIStatusType SIM800xGPRSGetAddress(uint8_t cid, char* ip);
 
 # 304
-extern APIStatusType SIM800xGPRSGetMTClass(uint8_t* mtclass);
+extern SIM800x_APIStatusType SIM800xGPRSGetMTClass(uint8_t* mtclass);
 
 # 324
-extern APIStatusType SIM800xGPRSSetMTClass(uint8_t mtclass, uint16_t* errcode);
+extern SIM800x_APIStatusType SIM800xGPRSSetMTClass(uint8_t mtclass, uint16_t* errcode);
 
 # 338
 extern SIM800xGPRSStatusType SIM800xGPRSUERGetMode(void);
 
 # 358
-extern APIStatusType SIM800xGPRSUERSetMode(uint8_t mode);
+extern SIM800x_APIStatusType SIM800xGPRSUERSetMode(uint8_t mode);
 
 # 378
 extern SIM800xGPRSStatusType SIM800xGPRSGetNRegState(uint16_t* errcode);
 
 # 396
-extern APIStatusType SIM800xGPRSURCEnable(uint8_t urc);
+extern SIM800x_APIStatusType SIM800xGPRSURCEnable(uint8_t urc);
 
 # 412
 extern SIM800xGPRSStatusType SIM800xGPRSGetMOSMSService(void);
 
 # 433
-extern APIStatusType SIM800xGPRSSetMOSMSService(uint8_t service, uint16_t* errcode);
+extern SIM800x_APIStatusType SIM800xGPRSSetMOSMSService(uint8_t service, uint16_t* errcode);
 
 # 58 "Src/../Inc/SIM800x_HTTP.h"
-extern APIStatusType SIM800xHTTPInit(uint16_t* errcode);
+extern SIM800x_APIStatusType SIM800xHTTPInit(uint16_t* errcode);
 
 # 73
-extern APIStatusType SIM800xHTTPTerminate(uint16_t* errcode);
+extern SIM800x_APIStatusType SIM800xHTTPTerminate(uint16_t* errcode);
 
 # 91
-extern APIStatusType SIM800xHTTPSetCID(uint8_t cid, uint16_t* errcode);
+extern SIM800x_APIStatusType SIM800xHTTPSetCID(uint8_t cid, uint16_t* errcode);
 
 # 111
-extern APIStatusType SIM800xHTTPSetURL(const char* url, uint16_t* errcode);
+extern SIM800x_APIStatusType SIM800xHTTPSetURL(const char* url, uint16_t* errcode);
 
 # 131
-extern APIStatusType SIM800xHTTPSetUA(const char* ua, uint16_t* errcode);
+extern SIM800x_APIStatusType SIM800xHTTPSetUA(const char* ua, uint16_t* errcode);
 
 # 150
-extern APIStatusType SIM800xHTTPSetIP(const char* proip, uint16_t* errcode);
+extern SIM800x_APIStatusType SIM800xHTTPSetIP(const char* proip, uint16_t* errcode);
 
 # 168
-extern APIStatusType SIM800xHTTPSetPort(uint16_t proport, uint16_t* errcode);
+extern SIM800x_APIStatusType SIM800xHTTPSetPort(uint16_t proport, uint16_t* errcode);
 
 # 190
-extern APIStatusType SIM800xHTTPSetRedir(uint8_t redir, uint16_t* errcode);
+extern SIM800x_APIStatusType SIM800xHTTPSetRedir(uint8_t redir, uint16_t* errcode);
 
 # 208
-extern APIStatusType SIM800xHTTPSetBreak(uint32_t _break, uint16_t* errcode);
+extern SIM800x_APIStatusType SIM800xHTTPSetBreak(uint32_t _break, uint16_t* errcode);
 
 # 226
-extern APIStatusType SIM800xHTTPSetBreakEnd(uint32_t breakend, uint16_t* errcode);
+extern SIM800x_APIStatusType SIM800xHTTPSetBreakEnd(uint32_t breakend, uint16_t* errcode);
 
 # 246
-extern APIStatusType SIM800xHTTPSetTimeout(uint16_t timeout, uint16_t* errcode);
+extern SIM800x_APIStatusType SIM800xHTTPSetTimeout(uint16_t timeout, uint16_t* errcode);
 
 # 265
-extern APIStatusType SIM800xHTTPSetContent(const char* content, uint16_t* errcode);
+extern SIM800x_APIStatusType SIM800xHTTPSetContent(const char* content, uint16_t* errcode);
 
 # 284
-extern APIStatusType SIM800xHTTPSetUserData(const char* userdata, uint16_t* errcode);
+extern SIM800x_APIStatusType SIM800xHTTPSetUserData(const char* userdata, uint16_t* errcode);
 
 # 310
-extern APIStatusType SIM800xHTTPInputData(char *data, uint32_t cnt, uint32_t timeout, uint16_t* errcode);
+extern SIM800x_APIStatusType SIM800xHTTPInputData(char *data, uint32_t cnt, uint32_t timeout, uint16_t* errcode);
 
 # 338
-extern APIStatusType SIM800xHTTPAction(uint8_t method, uint16_t* statuscode, uint32_t* cnt, uint32_t tout, uint16_t* errcode);
+extern SIM800x_APIStatusType SIM800xHTTPAction(uint8_t method, uint16_t* statuscode, uint32_t* cnt, uint32_t tout, uint16_t* errcode);
 
 # 366
-extern APIStatusType SIM800xHTTPRead(char* data, uint32_t strindex, uint32_t size, uint32_t* cnt, uint16_t* errcode);
+extern SIM800x_APIStatusType SIM800xHTTPRead(char* data, uint32_t strindex, uint32_t size, uint32_t* cnt, uint16_t* errcode);
 
 # 395
-extern APIStatusType SIM800xHTTPSaveAppContext(uint16_t* errcode);
+extern SIM800x_APIStatusType SIM800xHTTPSaveAppContext(uint16_t* errcode);
 
 # 424
-extern APIStatusType SIM800xHTTPReadState(uint8_t* method, uint8_t* state, uint32_t* finish, uint32_t* remain, uint16_t* errcode);
+extern SIM800x_APIStatusType SIM800xHTTPReadState(uint8_t* method, uint8_t* state, uint32_t* finish, uint32_t* remain, uint16_t* errcode);
 
 # 444
-extern APIStatusType SIM800xHTTPReadHeader(char *data, uint32_t* cnt, uint16_t* errcode);
+extern SIM800x_APIStatusType SIM800xHTTPReadHeader(char *data, uint32_t* cnt, uint16_t* errcode);
 
 # 465
-extern APIStatusType SIM800xHTTPShowHeader(uint8_t option, uint16_t* errcode);
+extern SIM800x_APIStatusType SIM800xHTTPShowHeader(uint8_t option, uint16_t* errcode);
+
+# 57 "Src/../Inc/SIM800x_3GPPTS270057.h"
+extern SIM800x_APIStatusType SIM800x3GPPGetOperatorName(char *name, uint16_t* errcode);
+
+# 83
+extern SIM800x_APIStatusType SIM800x3GPPGetSignalQuality(uint8_t *rssi, uint8_t *ber, uint16_t* errcode);
+
+# 101
+extern SIM800x_APIStatusType SIM800x3GPPGetSubscriberNumber(char *num, uint16_t* errcode);
 
 # 7 "C:\Program Files\Microchip\xc8\v2.36\pic\include\c90\stdarg.h"
 typedef void * va_list[1];
@@ -4305,26 +4320,26 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
 
-# 72 "Src/../Inc/SIM800x.h"
-extern APIStatusType SIM800xInit(uint32_t br);
+# 73 "Src/../Inc/SIM800x.h"
+extern SIM800x_APIStatusType SIM800xInit(uint32_t br);
 
-# 90
-extern APIStatusType SIM800xReset(void);
+# 91
+extern SIM800x_APIStatusType SIM800xReset(void);
 
-# 106
-extern APIStatusType SIM800xPWROn(void);
+# 107
+extern SIM800x_APIStatusType SIM800xPWROn(void);
 
-# 122
-extern APIStatusType SIM800xPWROff(void);
+# 123
+extern SIM800x_APIStatusType SIM800xPWROff(void);
 
-# 139
-extern APIStatusType SIM800xSetBaudRate(uint32_t br);
+# 140
+extern SIM800x_APIStatusType SIM800xSetBaudRate(uint32_t br);
 
-# 154
-extern APIStatusType SIM800xGetState(void);
+# 155
+extern SIM800x_APIStatusType SIM800xGetState(void);
 
-# 172
-extern APIStatusType SIM800xOff(void);
+# 173
+extern SIM800x_APIStatusType SIM800xOff(void);
 
 # 14 "C:\Program Files\Microchip\xc8\v2.36\pic\include\c90\string.h"
 extern void * memcpy(void *, const void *, size_t);
@@ -4440,18 +4455,18 @@ uint8_t SystemInit(void)
 {
 SoftUARTInit();
 
-if(SIM800xInit(9600) == OK)
+if(SIM800xInit(9600) == SIM800X_OK)
 {
 SoftUARTPrint("Modem Initialized.\r\r");
 
 
 
 SoftUARTPrint("Setting IP configurations...\r");
-if(SIM800xIPSetConnectionType(1, "GPRS") == OK)
+if(SIM800xIPSetConnectionType(1, "GPRS") == SIM800X_OK)
 {
-if(SIM800xIPSetAPN(1, "Internet") == OK)
+if(SIM800xIPSetAPN(1, "Internet") == SIM800X_OK)
 {
-if(SIM800xIPOpen(1) == OK)
+if(SIM800xIPOpen(1) == SIM800X_OK)
 {
 char ip[20];
 SoftUARTPrint("Done.\r\r");
@@ -4464,11 +4479,11 @@ uint16_t err;
 
 
 SoftUARTPrint("Setting HTTP configurations...\r");
-if(SIM800xHTTPInit(&err) == OK)
+if(SIM800xHTTPInit(&err) == SIM800X_OK)
 {
-if(SIM800xHTTPSetURL("http://backend.thinger.io/v3/users/FirmwareEngineers/devices/SIM800L/callback/data?authorization=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Nzk5NTYzNjIsImlhdCI6MTY3OTk0OTE2Miwicm9sZSI6InVzZXIiLCJ1c3IiOiJGaXJtd2FyZUVuZ2luZWVycyJ9.vf6hPNiSuslspmgiYMRaDTsLOm6764MR8PIgs9U0i6A", &err) == OK)
+if(SIM800xHTTPSetURL("http://backend.thinger.io/v3/users/FirmwareEngineers/devices/SIM800L/callback/data?authorization=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODAzNjA0NzAsImlhdCI6MTY4MDM1MzI3MCwicm9sZSI6InVzZXIiLCJ1c3IiOiJGaXJtd2FyZUVuZ2luZWVycyJ9.5MYrPVS4nFa2kou3dV2yZP4Svo3JV1Zj6gAIGTVui94", &err) == SIM800X_OK)
 {
-if(SIM800xHTTPSetContent("application/json", &err) == OK)
+if(SIM800xHTTPSetContent("application/json", &err) == SIM800X_OK)
 {
 SoftUARTPrint("Done.\r\r");
 
@@ -4484,7 +4499,7 @@ AddEntryToJsonObject(txmessage, "Fuel Level (%)", "50", &cpos);
 
 
 SoftUARTPrint("System Initialization completed.\r\r");
-return OK;
+return SIM800X_OK;
 }
 }
 }
@@ -4512,9 +4527,9 @@ SoftUARTPrint("Sending message to thinger.io...\r");
 
 SIM800xHTTPInputData(txmessage, (uint32_t)(cpos + 1), 5000, &errcode);
 
-if(SIM800xHTTPAction(1, &scode, &cnt, 10000, &errcode) == OK)
+if(SIM800xHTTPAction(1, &scode, &cnt, 10000, &errcode) == SIM800X_OK)
 {
-if(SIM800xHTTPRead(rxmessage, 0, cnt, &cnt, &errcode) == OK)
+if(SIM800xHTTPRead(rxmessage, 0, cnt, &cnt, &errcode) == SIM800X_OK)
 {
 char msg[20];
 sprintf(msg, "HTTP response code: %u\r", scode);
@@ -4530,7 +4545,6 @@ SoftUARTPrint("\r\r");
 SoftUARTPrint("Sending failed.\r");
 }
 
-# 138
 cmd = 0;
 }
 

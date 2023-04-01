@@ -13,5 +13,6 @@ Src/../Inc/SIM800x_ID.h  \
 Src/../Inc/SIM800x_IP.h  \
 Src/../Inc/../../../../M8M_APIs/PIC18.X/Inc/SystemTime.h  \
 Src/../Inc/SIM800x_Types.h  \
+Src/../Inc/SIM800x_3GPPTS270057.h  \
 Src/../Inc/SIM800x.h  \
 Src/../Inc/../../../../M8M_APIs/PIC18.X/Inc/USART.h 

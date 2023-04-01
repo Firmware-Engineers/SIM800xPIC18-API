@@ -68,9 +68,9 @@
         <linkerTool>
           <linkerLibItems>
             <linkerLibFileItem>Libs/LightJSONParser.X.a</linkerLibFileItem>
-            <linkerLibFileItem>Libs/SIM800x.X.a</linkerLibFileItem>
             <linkerLibFileItem>C:/EmbeddedDevOps/M8M_APIs/PIC18.X/Lib/SUART-16-9600-B0-B3.a</linkerLibFileItem>
             <linkerLibFileItem>C:/EmbeddedDevOps/M8M_APIs/PIC18.X/Lib/SystemTime.X.a</linkerLibFileItem>
+            <linkerLibFileItem>Libs/SIM800x.a</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
         <archiverTool>

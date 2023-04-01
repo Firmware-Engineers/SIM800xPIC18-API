@@ -47,30 +47,30 @@ extern "C" {
 /**
  * @brief       Initialized HTTP service
  * @param[out]  errcode: CME_ERROR code (See description in SIM800x_Types.h)        
- * @retval      APIStatusType. Supported values are:
+ * @retval      SIM800x_APIStatusType. Supported values are:
  * 
- *              - OK: success 
- *              - TIME_OUT: time-out
- *              - ERROR: failed
- *              - CME_ERROR: ME error
+ *              - SIM800X_OK: success 
+ *              - SIM800X_TIME_OUT: time-out
+ *              - SIM800X_ERROR: failed
+ *              - SIM800X_CME_ERROR: ME error
  *  
  */ 
-extern APIStatusType SIM800xHTTPInit(uint16_t* errcode);  
+extern SIM800x_APIStatusType SIM800xHTTPInit(uint16_t* errcode);  
 //-----------------------------------
 
 //-----------------------------------    
 /**
  * @brief       Terminate HTTP service
  * @param[out]  errcode: CME_ERROR code (See description in SIM800x_Types.h)        
- * @retval      APIStatusType. Supported values are:
+ * @retval      SIM800x_APIStatusType. Supported values are:
  * 
- *              - OK: success 
- *              - TIME_OUT: time-out
- *              - ERROR: failed
- *              - CME_ERROR: ME error
+ *              - SIM800X_OK: success 
+ *              - SIM800X_TIME_OUT: time-out
+ *              - SIM800X_ERROR: failed
+ *              - SIM800X_CME_ERROR: ME error
  *  
  */ 
-extern APIStatusType SIM800xHTTPTerminate(uint16_t* errcode);  
+extern SIM800x_APIStatusType SIM800xHTTPTerminate(uint16_t* errcode);  
 //-----------------------------------
 
 //-----------------------------------    
@@ -78,17 +78,17 @@ extern APIStatusType SIM800xHTTPTerminate(uint16_t* errcode);
  * @brief       Set context id for the HTTP request
  * @param[in]   cid: context id number
  * @param[out]  errcode: CME_ERROR code (See description in SIM800x_Types.h)        
- * @retval      APIStatusType. Supported values are:
+ * @retval      SIM800x_APIStatusType. Supported values are:
  * 
- *              - OK: success 
- *              - TIME_OUT: time-out
- *              - ERROR: failed
- *              - CME_ERROR: ME error
+ *              - SIM800X_OK: success 
+ *              - SIM800X_TIME_OUT: time-out
+ *              - SIM800X_ERROR: failed
+ *              - SIM800X_CME_ERROR: ME error
  * 
  * @note        This function cannot be used when HTTP service is not initialized.
  *  
  */ 
-extern APIStatusType SIM800xHTTPSetCID(uint8_t cid, uint16_t* errcode);  
+extern SIM800x_APIStatusType SIM800xHTTPSetCID(uint8_t cid, uint16_t* errcode);  
 //-----------------------------------
 
 //-----------------------------------    
@@ -97,18 +97,18 @@ extern APIStatusType SIM800xHTTPSetCID(uint8_t cid, uint16_t* errcode);
  * @param[in]   url: client URL (null terminated string).
  * @note        Maximum **URL size is 500 characters.**
  * @param[out]  errcode: CME_ERROR code (See description in SIM800x_Types.h)        
- * @retval      APIStatusType. Supported values are:
+ * @retval      SIM800x_APIStatusType. Supported values are:
  * 
- *              - OK: success 
- *              - TIME_OUT: time-out
- *              - ERROR: failed
- *              - CME_ERROR: ME error
+ *              - SIM800X_OK: success 
+ *              - SIM800X_TIME_OUT: time-out
+ *              - SIM800X_ERROR: failed
+ *              - SIM800X_CME_ERROR: ME error
  * 
  * 
  * @note        This function cannot be used when HTTP service is not initialized.
  *  
  */ 
-extern APIStatusType SIM800xHTTPSetURL(const char* url, uint16_t* errcode);  
+extern SIM800x_APIStatusType SIM800xHTTPSetURL(const char* url, uint16_t* errcode);  
 //-----------------------------------
 
 //-----------------------------------    
@@ -118,17 +118,17 @@ extern APIStatusType SIM800xHTTPSetURL(const char* url, uint16_t* errcode);
  * @note        The UA is set by the application to identify the mobile device.
  * @note        Maximum UA size is 100 characters.
  * @param[out]  errcode: CME_ERROR code (See description in SIM800x_Types.h)        
- * @retval      APIStatusType. Supported values are:
+ * @retval      SIM800x_APIStatusType. Supported values are:
  * 
- *              - OK: success 
- *              - TIME_OUT: time-out
- *              - ERROR: failed
- *              - CME_ERROR: ME error
+ *              - SIM800X_OK: success 
+ *              - SIM800X_TIME_OUT: time-out
+ *              - SIM800X_ERROR: failed
+ *              - SIM800X_CME_ERROR: ME error
  * 
  * @note        This function cannot be used when HTTP service is not initialized.
  *  
  */ 
-extern APIStatusType SIM800xHTTPSetUA(const char* ua, uint16_t* errcode);  
+extern SIM800x_APIStatusType SIM800xHTTPSetUA(const char* ua, uint16_t* errcode);  
 //-----------------------------------
 
 //-----------------------------------    
@@ -137,17 +137,17 @@ extern APIStatusType SIM800xHTTPSetUA(const char* ua, uint16_t* errcode);
  * @param[in]   proip: proxy server IP (null terminated string).
  * @note        **Maximum IP size is 15 characters.**
  * @param[out]  errcode: CME_ERROR code (See description in SIM800x_Types.h)        
- * @retval      APIStatusType. Supported values are:
+ * @retval      SIM800x_APIStatusType. Supported values are:
  * 
- *              - OK: success 
- *              - TIME_OUT: time-out
- *              - ERROR: failed
- *              - CME_ERROR: ME error
+ *              - SIM800X_OK: success 
+ *              - SIM800X_TIME_OUT: time-out
+ *              - SIM800X_ERROR: failed
+ *              - SIM800X_CME_ERROR: ME error
  * 
  * @note        This function cannot be used when HTTP service is not initialized.
  *  
  */ 
-extern APIStatusType SIM800xHTTPSetIP(const char* proip, uint16_t* errcode);  
+extern SIM800x_APIStatusType SIM800xHTTPSetIP(const char* proip, uint16_t* errcode);  
 //-----------------------------------
 
 //-----------------------------------    
@@ -155,17 +155,17 @@ extern APIStatusType SIM800xHTTPSetIP(const char* proip, uint16_t* errcode);
  * @brief       Set proxy server PORT
  * @param[in]   proport: proxy server PORT
  * @param[out]  errcode: CME_ERROR code (See description in SIM800x_Types.h)        
- * @retval      APIStatusType. Supported values are:
+ * @retval      SIM800x_APIStatusType. Supported values are:
  * 
- *              - OK: success 
- *              - TIME_OUT: time-out
- *              - ERROR: failed
- *              - CME_ERROR: ME error
+ *              - SIM800X_OK: success 
+ *              - SIM800X_TIME_OUT: time-out
+ *              - SIM800X_ERROR: failed
+ *              - SIM800X_CME_ERROR: ME error
  * 
  * @note        This function cannot be used when HTTP service is not initialized.
  *  
  */ 
-extern APIStatusType SIM800xHTTPSetPort(uint16_t proport, uint16_t* errcode);  
+extern SIM800x_APIStatusType SIM800xHTTPSetPort(uint16_t proport, uint16_t* errcode);  
 //-----------------------------------
 
 //-----------------------------------    
@@ -177,17 +177,17 @@ extern APIStatusType SIM800xHTTPSetPort(uint16_t proport, uint16_t* errcode);
  *              to the server if a redirect code (range 30x) is received.
  * 
  * @param[out]  errcode: CME_ERROR code (See description in SIM800x_Types.h)        
- * @retval      APIStatusType. Supported values are:
+ * @retval      SIM800x_APIStatusType. Supported values are:
  * 
- *              - OK: success 
- *              - TIME_OUT: time-out
- *              - ERROR: failed
- *              - CME_ERROR: ME error
+ *              - SIM800X_OK: success 
+ *              - SIM800X_TIME_OUT: time-out
+ *              - SIM800X_ERROR: failed
+ *              - SIM800X_CME_ERROR: ME error
  * 
  * @note        This function cannot be used when HTTP service is not initialized.
  *  
  */ 
-extern APIStatusType SIM800xHTTPSetRedir(uint8_t redir, uint16_t* errcode);  
+extern SIM800x_APIStatusType SIM800xHTTPSetRedir(uint8_t redir, uint16_t* errcode);  
 //-----------------------------------
 
 //-----------------------------------    
@@ -195,17 +195,17 @@ extern APIStatusType SIM800xHTTPSetRedir(uint8_t redir, uint16_t* errcode);
  * @brief       Set "BREAK" parameter value
  * @param[in]   _break: break value
  * @param[out]  errcode: CME_ERROR code (See description in SIM800x_Types.h)        
- * @retval      APIStatusType. Supported values are:
+ * @retval      SIM800x_APIStatusType. Supported values are:
  * 
- *              - OK: success 
- *              - TIME_OUT: time-out
- *              - ERROR: failed
- *              - CME_ERROR: ME error
+ *              - SIM800X_OK: success 
+ *              - SIM800X_TIME_OUT: time-out
+ *              - SIM800X_ERROR: failed
+ *              - SIM800X_CME_ERROR: ME error
  * 
  * @note        This function cannot be used when HTTP service is not initialized.
  *  
  */ 
-extern APIStatusType SIM800xHTTPSetBreak(uint32_t _break, uint16_t* errcode);  
+extern SIM800x_APIStatusType SIM800xHTTPSetBreak(uint32_t _break, uint16_t* errcode);  
 //-----------------------------------
 
 //-----------------------------------    
@@ -213,17 +213,17 @@ extern APIStatusType SIM800xHTTPSetBreak(uint32_t _break, uint16_t* errcode);
  * @brief       Set "BREAKEND" parameter value
  * @param[in]   breakend: breakend value
  * @param[out]  errcode: CME_ERROR code (See description in SIM800x_Types.h)        
- * @retval      APIStatusType. Supported values are:
+ * @retval      SIM800x_APIStatusType. Supported values are:
  * 
- *              - OK: success 
- *              - TIME_OUT: time-out
- *              - ERROR: failed
- *              - CME_ERROR: ME error
+ *              - SIM800X_OK: success 
+ *              - SIM800X_TIME_OUT: time-out
+ *              - SIM800X_ERROR: failed
+ *              - SIM800X_CME_ERROR: ME error
  * 
  * @note        This function cannot be used when HTTP service is not initialized.
  *  
  */ 
-extern APIStatusType SIM800xHTTPSetBreakEnd(uint32_t breakend, uint16_t* errcode);  
+extern SIM800x_APIStatusType SIM800xHTTPSetBreakEnd(uint32_t breakend, uint16_t* errcode);  
 //-----------------------------------
 
 //-----------------------------------    
@@ -233,17 +233,17 @@ extern APIStatusType SIM800xHTTPSetBreakEnd(uint32_t breakend, uint16_t* errcode
  *              - [30-1000].
  * @note        Default value is 120.
  * @param[out]  errcode: CME_ERROR code (See description in SIM800x_Types.h)        
- * @retval      APIStatusType. Supported values are:
+ * @retval      SIM800x_APIStatusType. Supported values are:
  * 
- *              - OK: success 
- *              - TIME_OUT: time-out
- *              - ERROR: failed
- *              - CME_ERROR: ME error
+ *              - SIM800X_OK: success 
+ *              - SIM800X_TIME_OUT: time-out
+ *              - SIM800X_ERROR: failed
+ *              - SIM800X_CME_ERROR: ME error
  * 
  * @note        This function cannot be used when HTTP service is not initialized.
  *  
  */ 
-extern APIStatusType SIM800xHTTPSetTimeout(uint16_t timeout, uint16_t* errcode);  
+extern SIM800x_APIStatusType SIM800xHTTPSetTimeout(uint16_t timeout, uint16_t* errcode);  
 //-----------------------------------
 
 //-----------------------------------    
@@ -252,17 +252,17 @@ extern APIStatusType SIM800xHTTPSetTimeout(uint16_t timeout, uint16_t* errcode);
  * @param[in]   content: CONTENT type (null terminated string).
  * @note        Maximum size for content is 80 characters.  
  * @param[out]  errcode: CME_ERROR code (See description in SIM800x_Types.h)        
- * @retval      APIStatusType. Supported values are:
+ * @retval      SIM800x_APIStatusType. Supported values are:
  * 
- *              - OK: success 
- *              - TIME_OUT: time-out
- *              - ERROR: failed
- *              - CME_ERROR: ME error
+ *              - SIM800X_OK: success 
+ *              - SIM800X_TIME_OUT: time-out
+ *              - SIM800X_ERROR: failed
+ *              - SIM800X_CME_ERROR: ME error
  * 
  * @note        This function cannot be used when HTTP service is not initialized.
  *  
  */ 
-extern APIStatusType SIM800xHTTPSetContent(const char* content, uint16_t* errcode);  
+extern SIM800x_APIStatusType SIM800xHTTPSetContent(const char* content, uint16_t* errcode);  
 //-----------------------------------
 
 //-----------------------------------    
@@ -271,17 +271,17 @@ extern APIStatusType SIM800xHTTPSetContent(const char* content, uint16_t* errcod
  * @param[in]   userdata: "USERDATA" parameter (null terminated string). 
  * @note        Maximum size for USERDATA is 1024 characters.
  * @param[out]  errcode: CME_ERROR code (See description in SIM800x_Types.h)        
- * @retval      APIStatusType. Supported values are:
+ * @retval      SIM800x_APIStatusType. Supported values are:
  * 
- *              - OK: success 
- *              - TIME_OUT: time-out
- *              - ERROR: failed
- *              - CME_ERROR: ME error
+ *              - SIM800X_OK: success 
+ *              - SIM800X_TIME_OUT: time-out
+ *              - SIM800X_ERROR: failed
+ *              - SIM800X_CME_ERROR: ME error
  * 
  * @note        This function cannot be used when HTTP service is not initialized.
  *  
  */ 
-extern APIStatusType SIM800xHTTPSetUserData(const char* userdata, uint16_t* errcode);  
+extern SIM800x_APIStatusType SIM800xHTTPSetUserData(const char* userdata, uint16_t* errcode);  
 //-----------------------------------
 
 //-----------------------------------    
@@ -297,17 +297,17 @@ extern APIStatusType SIM800xHTTPSetUserData(const char* userdata, uint16_t* errc
  * @note        timeout should be long enough to input all the "cnt" bytes of data.
  * @param[out]  errcode: CME_ERROR code (See description in SIM800x_Types.h)
  *       
- * @retval      APIStatusType. Supported values are:
+ * @retval      SIM800x_APIStatusType. Supported values are:
  * 
- *              - OK: success 
- *              - TIME_OUT: time-out
- *              - ERROR: failed
- *              - CME_ERROR: ME error
+ *              - SIM800X_OK: success 
+ *              - SIM800X_TIME_OUT: time-out
+ *              - SIM800X_ERROR: failed
+ *              - SIM800X_CME_ERROR: ME error
  * 
  * @note        This function cannot be used when HTTP service is not initialized.
  *  
  */ 
-extern APIStatusType SIM800xHTTPInputData(char *data, uint32_t cnt, uint32_t timeout, uint16_t* errcode);  
+extern SIM800x_APIStatusType SIM800xHTTPInputData(char *data, uint32_t cnt, uint32_t timeout, uint16_t* errcode);  
 //-----------------------------------
 
 //-----------------------------------    
@@ -325,17 +325,17 @@ extern APIStatusType SIM800xHTTPInputData(char *data, uint32_t cnt, uint32_t tim
  * @param[out]  errcode: CME_ERROR code (See description in SIM800x_Types.h)
  * @param[in]   tout: maximum response time in milliseconds, that will be used to wait for response from the server.            
  *       
- * @retval      APIStatusType. Supported values are:
+ * @retval      SIM800x_APIStatusType. Supported values are:
  * 
- *              - OK: success 
- *              - TIME_OUT: time-out
- *              - ERROR: failed
- *              - CME_ERROR: ME error
+ *              - SIM800X_OK: success 
+ *              - SIM800X_TIME_OUT: time-out
+ *              - SIM800X_ERROR: failed
+ *              - SIM800X_CME_ERROR: ME error
  * 
  * @note        This function cannot be used when HTTP service is not initialized.
  *  
  */ 
-extern APIStatusType SIM800xHTTPAction(uint8_t method, uint16_t* statuscode, uint32_t* cnt, uint32_t tout, uint16_t* errcode);  
+extern SIM800x_APIStatusType SIM800xHTTPAction(uint8_t method, uint16_t* statuscode, uint32_t* cnt, uint32_t tout, uint16_t* errcode);  
 //-----------------------------------
 
 //-----------------------------------    
@@ -353,17 +353,17 @@ extern APIStatusType SIM800xHTTPAction(uint8_t method, uint16_t* statuscode, uin
  * @param[out]  cnt: actual read data size in bytes.
  * @param[out]  errcode: CME_ERROR code (See description in SIM800x_Types.h)
  *       
- * @retval      APIStatusType. Supported values are:
+ * @retval      SIM800x_APIStatusType. Supported values are:
  * 
- *              - OK: success 
- *              - TIME_OUT: time-out
- *              - ERROR: failed
- *              - CME_ERROR: ME error
+ *              - SIM800X_OK: success 
+ *              - SIM800X_TIME_OUT: time-out
+ *              - SIM800X_ERROR: failed
+ *              - SIM800X_CME_ERROR: ME error
  * 
  * @note        This function cannot be used when HTTP service is not initialized.
  *  
  */ 
-extern APIStatusType SIM800xHTTPRead(char* data, uint32_t strindex, uint32_t size, uint32_t* cnt, uint16_t* errcode);  
+extern SIM800x_APIStatusType SIM800xHTTPRead(char* data, uint32_t strindex, uint32_t size, uint32_t* cnt, uint16_t* errcode);  
 //-----------------------------------
 
 
@@ -383,16 +383,16 @@ extern APIStatusType SIM800xHTTPRead(char* data, uint32_t strindex, uint32_t siz
  * 
  * @param[out]  errcode: CME_ERROR code (See description in SIM800x_Types.h)
  *       
- * @retval      APIStatusType. Supported values are:
+ * @retval      SIM800x_APIStatusType. Supported values are:
  * 
- *              - OK: success 
- *              - TIME_OUT: time-out
- *              - CME_ERROR: ME error
+ *              - SIM800X_OK: success 
+ *              - SIM800X_TIME_OUT: time-out
+ *              - SIM800X_CME_ERROR: ME error
  * 
  * @note        This function cannot be used when HTTP service is not initialized.
  *  
  */ 
-extern APIStatusType SIM800xHTTPSaveAppContext(uint16_t* errcode);  
+extern SIM800x_APIStatusType SIM800xHTTPSaveAppContext(uint16_t* errcode);  
 //-----------------------------------
 
 //-----------------------------------    
@@ -412,16 +412,16 @@ extern APIStatusType SIM800xHTTPSaveAppContext(uint16_t* errcode);
  * @param[out]  remain: amount of data remaining to be send/received.
  * @param[out]  errcode: CME_ERROR code (See description in SIM800x_Types.h)
  *       
- * @retval      APIStatusType. Supported values are:
+ * @retval      SIM800x_APIStatusType. Supported values are:
  * 
- *              - OK: success 
- *              - TIME_OUT: time-out
- *              - CME_ERROR: ME error
+ *              - SIM800X_OK: success 
+ *              - SIM800X_TIME_OUT: time-out
+ *              - SIM800X_CME_ERROR: ME error
  * 
  * @note        This function cannot be used when HTTP service is not initialized.
  *  
  */ 
-extern APIStatusType SIM800xHTTPReadState(uint8_t* method, uint8_t* state, uint32_t* finish, uint32_t* remain, uint16_t* errcode);  
+extern SIM800x_APIStatusType SIM800xHTTPReadState(uint8_t* method, uint8_t* state, uint32_t* finish, uint32_t* remain, uint16_t* errcode);  
 //-----------------------------------
 
 //-----------------------------------    
@@ -431,17 +431,17 @@ extern APIStatusType SIM800xHTTPReadState(uint8_t* method, uint8_t* state, uint3
  * @param[out]  cnt: actual length for HTTP header data output.
  * @param[out]  errcode: CME_ERROR code (See description in SIM800x_Types.h)
  *       
- * @retval      APIStatusType. Supported values are:
+ * @retval      SIM800x_APIStatusType. Supported values are:
  * 
- *              - OK: success 
- *              - TIME_OUT: time-out
- *              - ERROR: failed
- *              - CME_ERROR: ME error
+ *              - SIM800X_OK: success 
+ *              - SIM800X_TIME_OUT: time-out
+ *              - SIM800X_ERROR: failed
+ *              - SIM800X_CME_ERROR: ME error
  * 
  * @note        This function cannot be used when HTTP service is not initialized.
  *  
  */ 
-extern APIStatusType SIM800xHTTPReadHeader(char *data, uint32_t* cnt, uint16_t* errcode);  
+extern SIM800x_APIStatusType SIM800xHTTPReadHeader(char *data, uint32_t* cnt, uint16_t* errcode);  
 //-----------------------------------
 
 //-----------------------------------    
@@ -452,17 +452,17 @@ extern APIStatusType SIM800xHTTPReadHeader(char *data, uint32_t* cnt, uint16_t* 
  *              - 1: show HTTP header information 
  * @param[out]  errcode: CME_ERROR code (See description in SIM800x_Types.h)    
  *     
- * @retval      APIStatusType. Supported values are:
+ * @retval      SIM800x_APIStatusType. Supported values are:
  * 
- *              - OK: success 
- *              - TIME_OUT: time-out
- *              - ERROR: failed
- *              - CME_ERROR: ME error
+ *              - SIM800X_OK: success 
+ *              - SIM800X_TIME_OUT: time-out
+ *              - SIM800X_ERROR: failed
+ *              - SIM800X_CME_ERROR: ME error
  * 
  * @note        This function cannot be used when HTTP service is not initialized.
  *  
  */ 
-extern APIStatusType SIM800xHTTPShowHeader(uint8_t option, uint16_t* errcode);  
+extern SIM800x_APIStatusType SIM800xHTTPShowHeader(uint8_t option, uint16_t* errcode);  
 //-----------------------------------
 
 #ifdef	__cplusplus
