@@ -8,8 +8,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 "117 Src/../../../../M8M_APIs/PIC18.X/Inc/SoftwareUART.h
 [v _SoftUARTInit `(v ~T0 @X0 0 ef ]
 "38 Src/ApplicationExample.c
-[c E2115 0 1 2 3 4 5 6 7 8 9 .. ]
-[n E2115 . SIM800X_OK SIM800X_ERROR SIM800X_CME_ERROR SIM800X_CMS_ERROR SIM800X_BR_ERROR SIM800X_TIME_OUT SIM800X_READY SIM800X_BUSY SIM800X_NOT_DEFINED SIM800X_INVALID_RESPONSE  ]
+[c E2115 0 1 2 3 4 5 6 7 8 .. ]
+[n E2115 . SIM800X_OK SIM800X_ERROR SIM800X_CME_ERROR SIM800X_CMS_ERROR SIM800X_BR_ERROR SIM800X_TIME_OUT SIM800X_READY SIM800X_BUSY SIM800X_INVALID_RESPONSE  ]
 "73 Src/../Inc/SIM800x.h
 [v _SIM800xInit `(E2115 ~T0 @X0 0 ef1`ul ]
 "182 Src/../../../../M8M_APIs/PIC18.X/Inc/SoftwareUART.h
@@ -21,10 +21,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 "180
 [v _SIM800xIPOpen `(E2115 ~T0 @X0 0 ef1`uc ]
 "53 Src/ApplicationExample.c
-[c E2262 0 1 2 3 .. ]
-[n E2262 . IP_CONNECTING IP_CONNECTED IP_CLOSING IP_CLOSED  ]
+[c E2261 0 1 2 3 .. ]
+[n E2261 . IP_CONNECTING IP_CONNECTED IP_CLOSING IP_CLOSED  ]
 "210 Src/../Inc/SIM800x_IP.h
-[v _SIM800xIPGetState `(E2262 ~T0 @X0 0 ef2`uc`*uc ]
+[v _SIM800xIPGetState `(E2261 ~T0 @X0 0 ef2`uc`*uc ]
 "58 Src/../Inc/SIM800x_HTTP.h
 [v _SIM800xHTTPInit `(E2115 ~T0 @X0 0 ef1`*ui ]
 "111
@@ -2495,9 +2495,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;SIM800x_Types.h: 49: SIM800X_TIME_OUT = 5,
 [; ;SIM800x_Types.h: 50: SIM800X_READY = 6,
 [; ;SIM800x_Types.h: 51: SIM800X_BUSY = 7,
-[; ;SIM800x_Types.h: 52: SIM800X_NOT_DEFINED = 8,
-[; ;SIM800x_Types.h: 53: SIM800X_INVALID_RESPONSE = 9
-[; ;SIM800x_Types.h: 55: }SIM800x_APIStatusType;
+[; ;SIM800x_Types.h: 52: SIM800X_INVALID_RESPONSE = 8
+[; ;SIM800x_Types.h: 54: }SIM800x_APIStatusType;
 [; ;__size_t.h: 4: typedef unsigned size_t;
 [; ;stdlib.h: 7: typedef unsigned short wchar_t;
 [; ;stdlib.h: 15: typedef struct {

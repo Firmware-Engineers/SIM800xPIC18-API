@@ -48,9 +48,8 @@ typedef enum
     SIM800X_BR_ERROR            = 4,                                          	//!< Baud rate error
     SIM800X_TIME_OUT            = 5,                                         	//!< Time-out occurred during operation, no response received
     SIM800X_READY               = 6,                                          	//!< System ready                    
-    SIM800X_BUSY                = 7,                                          	//!< System busy
-    SIM800X_NOT_DEFINED         = 8,                                        	//!< Undefined response type        
-    SIM800X_INVALID_RESPONSE    = 9                                         	//!< No response or invalid response        
+    SIM800X_BUSY                = 7,                                          	//!< System busy       
+    SIM800X_INVALID_RESPONSE    = 8                                         	//!< No response or invalid response        
     //---------        
 }SIM800x_APIStatusType;
 //-----------------------------------

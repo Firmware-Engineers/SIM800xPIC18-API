@@ -16,13 +16,13 @@
 ### Memory Usage ###
  Intel Hex-file ranges:
   0h - 5h		(dist/default/production\SIM800x.X.production.hex)
-  8h - 2181h		(dist/default/production\SIM800x.X.production.hex)
+  8h - 21C3h		(dist/default/production\SIM800x.X.production.hex)
   798Eh - 7FFEh		(dist/default/production\SIM800x.X.production.hex)
   200000h - 200007h		(dist/default/production\SIM800x.X.production.hex)
   300000h - 30000Dh		(dist/default/production\SIM800x.X.production.hex)
  Unused ranges:
   6h - 7h
-  2182h - 798Dh
+  21C4h - 798Dh
   7FFFh - 1FFFFFh
   200008h - 2FFFFFh
 
@@ -569,7 +569,11 @@
 00002150 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00002160 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00002170 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00002180 | H1 H1 -- -- -- -- -- -- -- -- -- -- -- -- -- --
+00002180 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00002190 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+000021A0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+000021B0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+000021C0 | H1 H1 H1 H1 -- -- -- -- -- -- -- -- -- -- -- --
 ----------------------------------------------------------
 00007980 | -- -- -- -- -- -- -- -- -- -- -- -- -- -- H1 H1
 00007990 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1

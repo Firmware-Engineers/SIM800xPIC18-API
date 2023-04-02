@@ -2460,9 +2460,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;SIM800x_Types.h: 49: SIM800X_TIME_OUT = 5,
 [; ;SIM800x_Types.h: 50: SIM800X_READY = 6,
 [; ;SIM800x_Types.h: 51: SIM800X_BUSY = 7,
-[; ;SIM800x_Types.h: 52: SIM800X_NOT_DEFINED = 8,
-[; ;SIM800x_Types.h: 53: SIM800X_INVALID_RESPONSE = 9
-[; ;SIM800x_Types.h: 55: }SIM800x_APIStatusType;
+[; ;SIM800x_Types.h: 52: SIM800X_INVALID_RESPONSE = 8
+[; ;SIM800x_Types.h: 54: }SIM800x_APIStatusType;
 [; ;__size_t.h: 4: typedef unsigned size_t;
 [; ;stdlib.h: 7: typedef unsigned short wchar_t;
 [; ;stdlib.h: 15: typedef struct {

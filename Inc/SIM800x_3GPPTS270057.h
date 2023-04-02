@@ -51,7 +51,7 @@ extern "C" {
  *              - SIM800X_OK: success 
  *              - SIM800X_TIME_OUT: no data received
  *              - SIM800X_CME_ERROR: invalid
- *              - SIM800X_NOT_DEFINED: unexpected response  
+ *              - SIM800X_INVALID_RESPONSE: unexpected response  
  *
  */ 
 extern SIM800x_APIStatusType SIM800x3GPPGetOperatorName(char *name, uint16_t* errcode);  
@@ -77,7 +77,7 @@ extern SIM800x_APIStatusType SIM800x3GPPGetOperatorName(char *name, uint16_t* er
  *              - SIM800X_OK: success 
  *              - SIM800X_TIME_OUT: no data received
  *              - SIM800X_CME_ERROR: invalid
- *              - SIM800X_NOT_DEFINED: unexpected response  
+ *              - SIM800X_INVALID_RESPONSE: unexpected response  
  *
  */ 
 extern SIM800x_APIStatusType SIM800x3GPPGetSignalQuality(uint8_t *rssi, uint8_t *ber, uint16_t* errcode);  
@@ -95,7 +95,7 @@ extern SIM800x_APIStatusType SIM800x3GPPGetSignalQuality(uint8_t *rssi, uint8_t 
  *              - SIM800X_OK: success 
  *              - SIM800X_TIME_OUT: no data received
  *              - SIM800X_CME_ERROR: invalid
- *              - SIM800X_NOT_DEFINED: unexpected response  
+ *              - SIM800X_INVALID_RESPONSE: unexpected response  
  *
  */ 
 extern SIM800x_APIStatusType SIM800x3GPPGetSubscriberNumber(char *num, uint16_t* errcode);  

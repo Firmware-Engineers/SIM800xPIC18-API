@@ -65,7 +65,7 @@ extern "C" {
  *              - SIM800X_OK: success 
  *              - SIM800X_TIME_OUT: no data received
  *              - SIM800X_INVALID_RESPONSE: invalid
- *              - SIM800X_NOT_DEFINED: unexpected response    
+ *              - SIM800X_INVALID_RESPONSE: unexpected response    
  *
  */ 
 extern SIM800x_APIStatusType SIM800xGetManufacturerID(char * id);  
@@ -81,7 +81,7 @@ extern SIM800x_APIStatusType SIM800xGetManufacturerID(char * id);
  *              - SIM800X_OK: success 
  *              - SIM800X_TIME_OUT: no data received
  *              - SIM800X_INVALID_RESPONSE: invalid
- *              - SIM800X_NOT_DEFINED: unexpected response  
+ *              - SIM800X_INVALID_RESPONSE: unexpected response  
  *
  */ 
 extern SIM800x_APIStatusType SIM800xGetModelID(char * id);  
@@ -97,7 +97,7 @@ extern SIM800x_APIStatusType SIM800xGetModelID(char * id);
  *              - SIM800X_OK: success 
  *              - SIM800X_TIME_OUT: no data received
  *              - SIM800X_INVALID_RESPONSE: invalid
- *              - SIM800X_NOT_DEFINED: unexpected response  
+ *              - SIM800X_INVALID_RESPONSE: unexpected response  
  *
  */ 
 extern SIM800x_APIStatusType SIM800xGetSoftwareRevisionID(char * id);  
@@ -113,7 +113,7 @@ extern SIM800x_APIStatusType SIM800xGetSoftwareRevisionID(char * id);
  *              - SIM800X_OK: success 
  *              - SIM800X_TIME_OUT: no data received
  *              - SIM800X_INVALID_RESPONSE: invalid
- *              - SIM800X_NOT_DEFINED: unexpected response   
+ *              - SIM800X_INVALID_RESPONSE: unexpected response   
  *
  */ 
 extern SIM800x_APIStatusType SIM800xGetGlobalObjectID(char * id);  
@@ -129,7 +129,7 @@ extern SIM800x_APIStatusType SIM800xGetGlobalObjectID(char * id);
  *              - SIM800X_OK: success 
  *              - SIM800X_TIME_OUT: no data received
  *              - SIM800X_INVALID_RESPONSE: invalid
- *              - SIM800X_NOT_DEFINED: unexpected response   
+ *              - SIM800X_INVALID_RESPONSE: unexpected response   
  *
  */ 
 extern SIM800x_APIStatusType SIM800xGetIMEI(char * id);  
@@ -145,7 +145,7 @@ extern SIM800x_APIStatusType SIM800xGetIMEI(char * id);
  *              - SIM800X_OK: success 
  *              - SIM800X_TIME_OUT: no data received
  *              - SIM800X_INVALID_RESPONSE: invalid
- *              - SIM800X_NOT_DEFINED: unexpected response   
+ *              - SIM800X_INVALID_RESPONSE: unexpected response   
  *
  */ 
 extern SIM800x_APIStatusType SIM800xGetProductID(char * id);  
