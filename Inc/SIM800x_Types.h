@@ -11,14 +11,14 @@
  *                   - Feb 17, 2023: Initial release
  * 
  * @note            It has been successfully tested with:
- *                  IDE: 
- *                      - MPLAB X IDE v5.30
- *                  Compiler: 
- *                      - XC8 V1.45, V2.36
- *                  DTE Devices: 
- *                      - PIC 18F452
- *                  DCE Devices:
- *                      - SIM800L
+ *                  - IDE: 
+ *                      * MPLAB X IDE v5.30
+ *                  - Compiler: 
+ *                      * XC8 V1.45, V2.36
+ *                  - DTE Devices: 
+ *                      * PIC 18F452
+ *                  - DCE Devices:
+ *                      * SIM800L
  ******************************************************************************
  * @attention
  *

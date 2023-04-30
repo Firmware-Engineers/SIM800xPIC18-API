@@ -33,6 +33,7 @@ uint16_t cpos = 0;
 
 uint8_t SystemInit(void)
 {
+    SystimeInit();                                                              //!< Initialize the System Time API
     SoftUARTInit();                                                             //!< Initialize Software UART driver
     //---------    
     if(SIM800xInit(9600) == SIM800X_OK)

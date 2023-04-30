@@ -4,7 +4,7 @@
  * @author          Maxime  
  * @brief           Header file for SIM800 series Modem API Serial Data Manager (SDM)
  * @brief           This file provides macros and function definitions used to handle
- *                  serial data received by the Modem (DCE/TA), from the Controlling 
+ *                  serial data communication between the Modem (DCE/TA) and Controlling 
  *                  device (DTE/TE).
  * 
  * @note            **This driver is at the heart of the WWAN APIs operation, and is 
@@ -14,7 +14,7 @@
  * 
  * @warning         This driver uses the target controller: 
  *                      - UART/USART module
- *                      - UART/USART instance 1 on STM32 
+ *                      - UART/USART instance x on STM32 
  *                      - Interrupt on receive functionality
  *                  **Two functions, SIM800xSDMResume and SIM800xSDMSuspend, are implemented 
                     for enabling/disabling this driver.** 
@@ -28,8 +28,9 @@
  * @brief           See dependencies in the include section.
  * 
  * @note            History:
- *                   - Feb 18, 2023: Initial release
- * 
+ *                  - Feb 18, 2023: Initial release
+ *                  - April 30, 2023: The SIM800xSDMInit() function no longer initialize the
+ *                    System Time API. It is mandatory to do it prior to calling this function.
  * @note            It has been successfully tested with:
  *                  - IDE: 
  *                      * MPLAB X IDE v5.30
@@ -57,19 +58,19 @@ extern "C" {
 
 //-----------------------------------
 #include "SIM800x_CONFIG.h" 
-#if defined(CONFIG_TARGET_ARCH_PIC18)
+#if defined(SIM800X_CONFIG_TARGET_ARCH_PIC18)
 #include "../../../../M8M_APIs/PIC18.X/Inc/USART.h"
 #include "../../../../M8M_APIs/PIC18.X/Inc/SystemTime.h"
 #include "../../../../M8M_APIs/PIC18.X/Inc/GPIO.h"  
-#if (CONFIG_ENABLE_DBG_SUART == 1) 
+#if (SIM800X_CONFIG_ENABLE_DBG_SUART == 1) 
 #include "../../../../M8M_APIs/PIC18.X/Inc/SoftwareUART.h"    
 #endif
-#elif defined(CONFIG_TARGET_ARCH_AVRMEGA)
-#elif defined(CONFIG_TARGET_ARCH_STM32F4)
+#elif defined(SIM800X_CONFIG_TARGET_ARCH_AVRMEGA)
+#elif defined(SIM800X_CONFIG_TARGET_ARCH_STM32F4)
 #endif     
 //----------------------------------- 
 
-#if defined (CONFIG_TARGET_ARCH_PIC18)
+#if defined (SIM800X_CONFIG_TARGET_ARCH_PIC18)
 #define UARTSend(x)                     USARTTransmitByte(x)
 #define UARTRead()                      USARTReceiveByte()
 #define Tick()                          Tick_ms()
@@ -80,13 +81,13 @@ extern "C" {
 #define ClearPin(x,y)                   GPIOClearPin(x,y)
 #define SetOutput(x,y)                  GPIOSetOutput(x,y)
 #define SetInput(x,y)                   GPIOSetInput(x,y)
-#if (CONFIG_ENABLE_DBG_SUART == 1)
+#if (SIM800X_CONFIG_ENABLE_DBG_SUART == 1)
 #define SUARTSend(x)                    SoftUARTTransmitByte(x)
 #define SUARTInit()                     SoftUARTInit()
 #define SUARTPrint(x)                   SoftUARTPrint(x)
 #endif
-#elif defined (CONFIG_TARGET_ARCH_AVRMEGA)
-#elif defined (CONFIG_TARGET_ARCH_STM32F4)
+#elif defined (SIM800X_CONFIG_TARGET_ARCH_AVRMEGA)
+#elif defined (SIM800X_CONFIG_TARGET_ARCH_STM32F4)
 #endif    
 //-----------------------------------    
 /**
@@ -94,15 +95,14 @@ extern "C" {
  * @note    This function will:
  *              - Enable all required device UART interrupt settings, depending on the architecture
  *              - Set communication baudrate
- *              - Initialize the system time management library 
- *              (ex. System Tick for STM32, SystemTime for PIC18)
  * 
  * @note    Prior to using this function, make sure to define the global macro FOSC_MHZ or the OSC_MHZ (in SystemTime.h)
  *          constant, with the MCU crystal frequency in megahertz.
  * @param   br: UART communication baud rate constant value   
  * @retval  none
  * 
- * @warning **When using the SDM on PIC18 devices, make sure not to let the RX pin floating. Use a pull-up instead.** 
+ * @warning **When using the SDM on PIC18 devices, make sure not to let the RX pin floating. Use a pull-up instead.**
+ * @warning **make sure to initialize the system Time API prior to calling this function.** 
  */ 
 extern void SIM800xSDMInit(uint32_t br);  
 //-----------------------------------    

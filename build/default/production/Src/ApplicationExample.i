@@ -3834,7 +3834,7 @@ uint8_t Bytes[23];
 
 volatile IORegistersMapType IO @0xF80;
 
-# 126
+# 125
 typedef struct
 {
 uint8_t grp1;
@@ -4399,41 +4399,42 @@ extern void SystemTask(void);
 # 101 "Src/../../../../M8M_APIs/PIC18.X/Inc/SoftwareUART.h"
 typedef union{
 uint8_t Byte;
-struct{
+struct
+{
 unsigned Buf:1;
 unsigned Ferr:1;
 unsigned:6;
 };
 }SoftUARTStatusType;
 
-# 117
+# 118
 extern void SoftUARTInit(void);
 
-# 128
+# 129
 extern uint8_t SoftUARTRxAvailable(void);
 
-# 138
+# 139
 extern void SoftUARTTransmitByte(uint8_t data);
 
-# 149
+# 150
 extern int SoftUARTReceiveByte(void);
 
-# 160
+# 161
 extern void SoftUARTTransmitBytes(uint8_t *data, uint16_t cnt);
 
-# 172
+# 173
 extern uint16_t SoftUARTReceiveBytes(uint8_t *data, uint16_t cnt, uint32_t tout);
 
-# 182
+# 183
 extern void SoftUARTPrint(const char *str);
 
-# 192
+# 193
 extern void SoftUARTSuspend(void);
 
-# 202
+# 203
 extern void SoftUARTResume(void);
 
-# 212
+# 213
 extern void SoftUARTFlushRx(void);
 
 

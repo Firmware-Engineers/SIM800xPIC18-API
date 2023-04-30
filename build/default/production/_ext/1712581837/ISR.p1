@@ -7,10 +7,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S233 . . Bytes ]
 "111 C:/EmbeddedDevOps/M8M_APIs/PIC18.X/Src/../Inc/SystemTime.h
 [v _SysTimeCallBack `(v ~T0 @X0 0 ef ]
-"216 C:/EmbeddedDevOps/M8M_APIs/PIC18.X/Src/../Inc/SoftwareUART.h
-[v _SoftUARTCallBack `(v ~T0 @X0 0 ef ]
-"296 C:/EmbeddedDevOps/M8M_APIs/PIC18.X/Src/../../../WWM_APIs/SIMCOM/SIM800x.X/Inc/SIM800x_SDM.h
-[v _SIM800xSDMCallBack `(v ~T0 @X0 0 ef ]
 [; ;xc.h: 18: extern const char __xc8_OPTIM_SPEED;
 [; ;xc.h: 20: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -2402,13 +2398,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 "107 C:/EmbeddedDevOps/M8M_APIs/PIC18.X/Src/../Inc/PIC18Types.h
 [v _IO `VS233 ~T0 @X0 1 e@3968 ]
 [; ;PIC18Types.h: 107: volatile IORegistersMapType IO @0xF80;
-[; ;PIC18Types.h: 126: typedef struct
-[; ;PIC18Types.h: 127: {
-[; ;PIC18Types.h: 128: uint8_t grp1;
-[; ;PIC18Types.h: 129: uint8_t grp2;
-[; ;PIC18Types.h: 130: uint8_t grp3;
-[; ;PIC18Types.h: 131: uint8_t grp4;
-[; ;PIC18Types.h: 132: }ConfigType;
+[; ;PIC18Types.h: 125: typedef struct
+[; ;PIC18Types.h: 126: {
+[; ;PIC18Types.h: 127: uint8_t grp1;
+[; ;PIC18Types.h: 128: uint8_t grp2;
+[; ;PIC18Types.h: 129: uint8_t grp3;
+[; ;PIC18Types.h: 130: uint8_t grp4;
+[; ;PIC18Types.h: 131: }ConfigType;
 [; ;Interrupts.h: 348: extern void InterruptEnable(ConfigType cfg);
 [; ;Interrupts.h: 375: extern void InterruptDisable(ConfigType cfg);
 [; ;Interrupts.h: 405: extern uint16_t InterruptGetFlag(uint16_t cnst);
@@ -2429,23 +2425,24 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;SystemTime.h: 134: extern void SysTimeResume(void);
 [; ;SoftwareUART.h: 101: typedef union{
 [; ;SoftwareUART.h: 102: uint8_t Byte;
-[; ;SoftwareUART.h: 103: struct{
-[; ;SoftwareUART.h: 104: unsigned Buf:1;
-[; ;SoftwareUART.h: 105: unsigned Ferr:1;
-[; ;SoftwareUART.h: 106: unsigned:6;
-[; ;SoftwareUART.h: 107: };
-[; ;SoftwareUART.h: 108: }SoftUARTStatusType;
-[; ;SoftwareUART.h: 117: extern void SoftUARTInit(void);
-[; ;SoftwareUART.h: 128: extern uint8_t SoftUARTRxAvailable(void);
-[; ;SoftwareUART.h: 138: extern void SoftUARTTransmitByte(uint8_t data);
-[; ;SoftwareUART.h: 149: extern int SoftUARTReceiveByte(void);
-[; ;SoftwareUART.h: 160: extern void SoftUARTTransmitBytes(uint8_t *data, uint16_t cnt);
-[; ;SoftwareUART.h: 172: extern uint16_t SoftUARTReceiveBytes(uint8_t *data, uint16_t cnt, uint32_t tout);
-[; ;SoftwareUART.h: 182: extern void SoftUARTPrint(const char *str);
-[; ;SoftwareUART.h: 192: extern void SoftUARTSuspend(void);
-[; ;SoftwareUART.h: 202: extern void SoftUARTResume(void);
-[; ;SoftwareUART.h: 212: extern void SoftUARTFlushRx(void);
-[; ;SoftwareUART.h: 216: extern void SoftUARTCallBack(void);
+[; ;SoftwareUART.h: 103: struct
+[; ;SoftwareUART.h: 104: {
+[; ;SoftwareUART.h: 105: unsigned Buf:1;
+[; ;SoftwareUART.h: 106: unsigned Ferr:1;
+[; ;SoftwareUART.h: 107: unsigned:6;
+[; ;SoftwareUART.h: 108: };
+[; ;SoftwareUART.h: 109: }SoftUARTStatusType;
+[; ;SoftwareUART.h: 118: extern void SoftUARTInit(void);
+[; ;SoftwareUART.h: 129: extern uint8_t SoftUARTRxAvailable(void);
+[; ;SoftwareUART.h: 139: extern void SoftUARTTransmitByte(uint8_t data);
+[; ;SoftwareUART.h: 150: extern int SoftUARTReceiveByte(void);
+[; ;SoftwareUART.h: 161: extern void SoftUARTTransmitBytes(uint8_t *data, uint16_t cnt);
+[; ;SoftwareUART.h: 173: extern uint16_t SoftUARTReceiveBytes(uint8_t *data, uint16_t cnt, uint32_t tout);
+[; ;SoftwareUART.h: 183: extern void SoftUARTPrint(const char *str);
+[; ;SoftwareUART.h: 193: extern void SoftUARTSuspend(void);
+[; ;SoftwareUART.h: 203: extern void SoftUARTResume(void);
+[; ;SoftwareUART.h: 213: extern void SoftUARTFlushRx(void);
+[; ;SoftwareUART.h: 217: extern void SoftUARTCallBack(void);
 [; ;USART.h: 195: extern void USARTSetBGR(uint8_t bgr);
 [; ;USART.h: 219: extern void USARTSetBaudRate(uint32_t baud);
 [; ;USART.h: 247: extern void USARTInit(ConfigType cfg);
@@ -2674,12 +2671,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ISR.c: 67: SysTimeCallBack();
 "67
 [e ( _SysTimeCallBack ..  ]
-[; ;ISR.c: 69: SoftUARTCallBack();
-"69
-[e ( _SoftUARTCallBack ..  ]
-[; ;ISR.c: 70: SIM800xSDMCallBack();
-"70
-[e ( _SIM800xSDMCallBack ..  ]
 [; ;ISR.c: 71: }
 "71
 [e :UE 243 ]
