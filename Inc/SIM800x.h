@@ -10,7 +10,11 @@
  * @brief           See dependencies in the include section.
  * 
  * @note            History:
- *                   - Feb 17, 2023: Initial release
+ *                  - Feb 17, 2023: Initial release
+ *                  - May 1, 2023: The initialization function no longer 
+ *                    set the modem baudrate. To change the communication baudrate, use the
+ *                    SIM800xSetBaudRate() function.
+ *                      
  * 
  * @note            It has been successfully tested with:
  *                  - IDE: 
@@ -53,14 +57,12 @@ extern "C" {
 /**
  * @brief   Initialize the API
  * @note    This function will:
- *              - Initialize the SDM driver and associated libraries
- *              - Set modem communication baud rate 
- * @note    Prior to using this function, make sure to define the global macro FOSC_MHZ,
- *          with the MCU crystal frequency in megahertz, in the project settings.
+ *              - Initialize the SDM driver
+ * 
+ * @note    Prior to using this function, it is mandatory to initialize the System time API and USART/UART library.
  * @note    Modem baud rate has to be known prior to calling this function. The initialization will fail if 
  *          modem and controller baud rates are not synchronized.
- * @note    **Use a USB to TTL converter (ex. FT232R) and serial a terminal (ex. FLOTERM) to configure and save the modem baud rate.**
- * @param   br: Modem communication baud rate (see @ref CONFIG_API_BAUDRATE_CONSTANTS)   
+ * @note    **Use a USB to TTL converter (ex. FT232R) and serial a terminal (ex. FLOTERM) to configure and save the modem baud rate.**   
  * @retval  SIM800x_APIStatusType
  * 
  *              - SIM800X_OK: success 
@@ -70,7 +72,7 @@ extern "C" {
  * @warning  **initialization takes 5 to 10s to complete.**
  *
  */ 
-extern SIM800x_APIStatusType SIM800xInit(uint32_t br);  
+extern SIM800x_APIStatusType SIM800xInit(void);  
 //-----------------------------------
 
 //-----------------------------------    
@@ -128,7 +130,7 @@ extern SIM800x_APIStatusType SIM800xPWROff(void);
  * @brief   Set modem baud rate
  * @note    This function will:
  *              - Attempt to set the modem baud rate
- *              - If successful, the local baud rate will also be adjusted accordingly
+ *              - If successful, the USART/UART baud rate will also be adjusted accordingly
  * @param   none  
  * @retval  SIM800x_APIStatusType
  * 

@@ -2408,18 +2408,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;PIC18Types.h: 129: uint8_t grp3;
 [; ;PIC18Types.h: 130: uint8_t grp4;
 [; ;PIC18Types.h: 131: }ConfigType;
-[; ;USART.h: 195: extern void USARTSetBGR(uint8_t bgr);
-[; ;USART.h: 219: extern void USARTSetBaudRate(uint32_t baud);
-[; ;USART.h: 247: extern void USARTInit(ConfigType cfg);
-[; ;USART.h: 277: extern void USARTAsyncInit(uint8_t bgr);
-[; ;USART.h: 287: extern void USARTTransmitByte9(uint16_t data);
-[; ;USART.h: 298: extern void USARTTransmitBytes(uint8_t *data, uint16_t cnt);
-[; ;USART.h: 309: extern void USARTTransmitBytes9(uint16_t *data, uint16_t cnt);
-[; ;USART.h: 319: extern void USARTPrint(const char *str);
-[; ;USART.h: 329: extern uint8_t USARTReceiveByte(void);
-[; ;USART.h: 339: extern uint16_t USARTReceiveByte9(void);
-[; ;USART.h: 351: extern uint16_t USARTReceiveBytes(uint8_t *data, uint16_t cnt, uint32_t tout);
-[; ;USART.h: 363: extern uint16_t USARTReceiveBytes9(uint16_t *data, uint16_t cnt, uint32_t tout);
+[; ;USART.h: 196: extern void USARTSetBGR(uint8_t bgr);
+[; ;USART.h: 220: extern void USARTSetBaudRate(uint32_t baud);
+[; ;USART.h: 248: extern void USARTInit(ConfigType cfg);
+[; ;USART.h: 275: extern void USARTAsyncInit(uint8_t bgr);
+[; ;USART.h: 285: extern void USARTTransmitByte9(uint16_t data);
+[; ;USART.h: 296: extern void USARTTransmitBytes(uint8_t *data, uint16_t cnt);
+[; ;USART.h: 307: extern void USARTTransmitBytes9(uint16_t *data, uint16_t cnt);
+[; ;USART.h: 317: extern void USARTPrint(const char *str);
+[; ;USART.h: 327: extern uint8_t USARTReceiveByte(void);
+[; ;USART.h: 337: extern uint16_t USARTReceiveByte9(void);
+[; ;USART.h: 349: extern uint16_t USARTReceiveBytes(uint8_t *data, uint16_t cnt, uint32_t tout);
+[; ;USART.h: 361: extern uint16_t USARTReceiveBytes9(uint16_t *data, uint16_t cnt, uint32_t tout);
 "54 Src/../Inc/../../../../M8M_APIs/PIC18.X/Inc/SystemTime.h
 [v _OSC_FREQ `Cuc ~T0 @X0 1 e ]
 [i _OSC_FREQ
@@ -2433,23 +2433,23 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;SystemTime.h: 111: extern void SysTimeCallBack(void);
 [; ;SystemTime.h: 122: extern void SysTimeSuspend(void);
 [; ;SystemTime.h: 134: extern void SysTimeResume(void);
-[; ;SIM800x_SDM.h: 107: extern void SIM800xSDMInit(uint32_t br);
-[; ;SIM800x_SDM.h: 117: extern void SIM800xSDMResume(void);
-[; ;SIM800x_SDM.h: 128: extern void SIM800xSDMSuspend(void);
-[; ;SIM800x_SDM.h: 140: extern uint8_t SIM800xSDMIsSuspended(void);
-[; ;SIM800x_SDM.h: 150: extern uint16_t SIM800xSDMRxAvailable(void);
-[; ;SIM800x_SDM.h: 160: extern void SIM800xSDMSendByte(uint8_t data);
-[; ;SIM800x_SDM.h: 171: extern void SIM800xSDMSendBytes(uint8_t *data, uint16_t cnt);
-[; ;SIM800x_SDM.h: 181: extern void SIM800xSDMPrint(const char *str);
-[; ;SIM800x_SDM.h: 194: extern uint8_t SIM800xSDMReadByte(void);
-[; ;SIM800x_SDM.h: 207: extern uint16_t SIM800xSDMReadBytes(uint8_t *data, uint16_t cnt, uint32_t tout);
-[; ;SIM800x_SDM.h: 222: extern uint8_t SIM800xSDMPeek(uint8_t idx);
-[; ;SIM800x_SDM.h: 238: extern int SIM800xSDMReadF1Pkt(uint8_t *data);
-[; ;SIM800x_SDM.h: 254: extern int SIM800xSDMReadF2Pkt(uint8_t *data);
-[; ;SIM800x_SDM.h: 263: extern void SIM800xSDMFlush(void);
-[; ;SIM800x_SDM.h: 275: extern void SIM800xSDMSetTimeOut(uint32_t tout);
-[; ;SIM800x_SDM.h: 284: extern uint32_t SIM800xSDMGetTimeOut(void);
-[; ;SIM800x_SDM.h: 296: extern void SIM800xSDMCallBack(void);
+[; ;SIM800x_SDM.h: 102: extern void SIM800xSDMInit(void);
+[; ;SIM800x_SDM.h: 112: extern void SIM800xSDMResume(void);
+[; ;SIM800x_SDM.h: 123: extern void SIM800xSDMSuspend(void);
+[; ;SIM800x_SDM.h: 135: extern uint8_t SIM800xSDMIsSuspended(void);
+[; ;SIM800x_SDM.h: 145: extern uint16_t SIM800xSDMRxAvailable(void);
+[; ;SIM800x_SDM.h: 155: extern void SIM800xSDMSendByte(uint8_t data);
+[; ;SIM800x_SDM.h: 166: extern void SIM800xSDMSendBytes(uint8_t *data, uint16_t cnt);
+[; ;SIM800x_SDM.h: 176: extern void SIM800xSDMPrint(const char *str);
+[; ;SIM800x_SDM.h: 189: extern uint8_t SIM800xSDMReadByte(void);
+[; ;SIM800x_SDM.h: 202: extern uint16_t SIM800xSDMReadBytes(uint8_t *data, uint16_t cnt, uint32_t tout);
+[; ;SIM800x_SDM.h: 217: extern uint8_t SIM800xSDMPeek(uint8_t idx);
+[; ;SIM800x_SDM.h: 233: extern int SIM800xSDMReadF1Pkt(uint8_t *data);
+[; ;SIM800x_SDM.h: 249: extern int SIM800xSDMReadF2Pkt(uint8_t *data);
+[; ;SIM800x_SDM.h: 258: extern void SIM800xSDMFlush(void);
+[; ;SIM800x_SDM.h: 270: extern void SIM800xSDMSetTimeOut(uint32_t tout);
+[; ;SIM800x_SDM.h: 279: extern uint32_t SIM800xSDMGetTimeOut(void);
+[; ;SIM800x_SDM.h: 291: extern void SIM800xSDMCallBack(void);
 [; ;SIM800x_Types.h: 41: typedef enum
 [; ;SIM800x_Types.h: 42: {
 [; ;SIM800x_Types.h: 44: SIM800X_OK = 0,
@@ -2629,13 +2629,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdio.h: 190: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
 [; ;stdio.h: 194: extern int sprintf(char *, const char *, ...);
 [; ;stdio.h: 195: extern int printf(const char *, ...);
-[; ;SIM800x.h: 73: extern SIM800x_APIStatusType SIM800xInit(uint32_t br);
-[; ;SIM800x.h: 91: extern SIM800x_APIStatusType SIM800xReset(void);
-[; ;SIM800x.h: 107: extern SIM800x_APIStatusType SIM800xPWROn(void);
-[; ;SIM800x.h: 123: extern SIM800x_APIStatusType SIM800xPWROff(void);
-[; ;SIM800x.h: 140: extern SIM800x_APIStatusType SIM800xSetBaudRate(uint32_t br);
-[; ;SIM800x.h: 155: extern SIM800x_APIStatusType SIM800xGetState(void);
-[; ;SIM800x.h: 173: extern SIM800x_APIStatusType SIM800xOff(void);
+[; ;SIM800x.h: 75: extern SIM800x_APIStatusType SIM800xInit(void);
+[; ;SIM800x.h: 93: extern SIM800x_APIStatusType SIM800xReset(void);
+[; ;SIM800x.h: 109: extern SIM800x_APIStatusType SIM800xPWROn(void);
+[; ;SIM800x.h: 125: extern SIM800x_APIStatusType SIM800xPWROff(void);
+[; ;SIM800x.h: 142: extern SIM800x_APIStatusType SIM800xSetBaudRate(uint32_t br);
+[; ;SIM800x.h: 157: extern SIM800x_APIStatusType SIM800xGetState(void);
+[; ;SIM800x.h: 175: extern SIM800x_APIStatusType SIM800xOff(void);
 [; ;string.h: 14: extern void * memcpy(void *, const void *, size_t);
 [; ;string.h: 15: extern void * memmove(void *, const void *, size_t);
 [; ;string.h: 16: extern void * memset(void *, int, size_t);

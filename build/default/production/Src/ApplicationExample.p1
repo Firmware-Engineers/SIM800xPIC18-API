@@ -5,13 +5,17 @@ Version 3.2 HI-TECH Software Intermediate Code
 "77
 [u S233 `S234 1 `uc -> 23 `i ]
 [n S233 . . Bytes ]
+"70 Src/../Inc/../../../../M8M_APIs/PIC18.X/Inc/SystemTime.h
+[v _SystimeInit `(v ~T0 @X0 0 ef ]
+"275 Src/../Inc/../../../../M8M_APIs/PIC18.X/Inc/USART.h
+[v _USARTAsyncInit `(v ~T0 @X0 0 ef1`uc ]
 "118 Src/../../../../M8M_APIs/PIC18.X/Inc/SoftwareUART.h
 [v _SoftUARTInit `(v ~T0 @X0 0 ef ]
-"38 Src/ApplicationExample.c
+"40 Src/ApplicationExample.c
 [c E2115 0 1 2 3 4 5 6 7 8 .. ]
 [n E2115 . SIM800X_OK SIM800X_ERROR SIM800X_CME_ERROR SIM800X_CMS_ERROR SIM800X_BR_ERROR SIM800X_TIME_OUT SIM800X_READY SIM800X_BUSY SIM800X_INVALID_RESPONSE  ]
-"73 Src/../Inc/SIM800x.h
-[v _SIM800xInit `(E2115 ~T0 @X0 0 ef1`ul ]
+"75 Src/../Inc/SIM800x.h
+[v _SIM800xInit `(E2115 ~T0 @X0 0 ef ]
 "183 Src/../../../../M8M_APIs/PIC18.X/Inc/SoftwareUART.h
 [v _SoftUARTPrint `(v ~T0 @X0 0 ef1`*Cuc ]
 "76 Src/../Inc/SIM800x_IP.h
@@ -20,7 +24,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _SIM800xIPSetAPN `(E2115 ~T0 @X0 0 ef2`uc`*Cuc ]
 "180
 [v _SIM800xIPOpen `(E2115 ~T0 @X0 0 ef1`uc ]
-"53 Src/ApplicationExample.c
+"55 Src/ApplicationExample.c
 [c E2261 0 1 2 3 .. ]
 [n E2261 . IP_CONNECTING IP_CONNECTED IP_CLOSING IP_CLOSED  ]
 "210 Src/../Inc/SIM800x_IP.h
@@ -2443,18 +2447,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;PIC18Types.h: 129: uint8_t grp3;
 [; ;PIC18Types.h: 130: uint8_t grp4;
 [; ;PIC18Types.h: 131: }ConfigType;
-[; ;USART.h: 195: extern void USARTSetBGR(uint8_t bgr);
-[; ;USART.h: 219: extern void USARTSetBaudRate(uint32_t baud);
-[; ;USART.h: 247: extern void USARTInit(ConfigType cfg);
-[; ;USART.h: 277: extern void USARTAsyncInit(uint8_t bgr);
-[; ;USART.h: 287: extern void USARTTransmitByte9(uint16_t data);
-[; ;USART.h: 298: extern void USARTTransmitBytes(uint8_t *data, uint16_t cnt);
-[; ;USART.h: 309: extern void USARTTransmitBytes9(uint16_t *data, uint16_t cnt);
-[; ;USART.h: 319: extern void USARTPrint(const char *str);
-[; ;USART.h: 329: extern uint8_t USARTReceiveByte(void);
-[; ;USART.h: 339: extern uint16_t USARTReceiveByte9(void);
-[; ;USART.h: 351: extern uint16_t USARTReceiveBytes(uint8_t *data, uint16_t cnt, uint32_t tout);
-[; ;USART.h: 363: extern uint16_t USARTReceiveBytes9(uint16_t *data, uint16_t cnt, uint32_t tout);
+[; ;USART.h: 196: extern void USARTSetBGR(uint8_t bgr);
+[; ;USART.h: 220: extern void USARTSetBaudRate(uint32_t baud);
+[; ;USART.h: 248: extern void USARTInit(ConfigType cfg);
+[; ;USART.h: 275: extern void USARTAsyncInit(uint8_t bgr);
+[; ;USART.h: 285: extern void USARTTransmitByte9(uint16_t data);
+[; ;USART.h: 296: extern void USARTTransmitBytes(uint8_t *data, uint16_t cnt);
+[; ;USART.h: 307: extern void USARTTransmitBytes9(uint16_t *data, uint16_t cnt);
+[; ;USART.h: 317: extern void USARTPrint(const char *str);
+[; ;USART.h: 327: extern uint8_t USARTReceiveByte(void);
+[; ;USART.h: 337: extern uint16_t USARTReceiveByte9(void);
+[; ;USART.h: 349: extern uint16_t USARTReceiveBytes(uint8_t *data, uint16_t cnt, uint32_t tout);
+[; ;USART.h: 361: extern uint16_t USARTReceiveBytes9(uint16_t *data, uint16_t cnt, uint32_t tout);
 "54 Src/../Inc/../../../../M8M_APIs/PIC18.X/Inc/SystemTime.h
 [v _OSC_FREQ `Cuc ~T0 @X0 1 e ]
 [i _OSC_FREQ
@@ -2468,23 +2472,23 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;SystemTime.h: 111: extern void SysTimeCallBack(void);
 [; ;SystemTime.h: 122: extern void SysTimeSuspend(void);
 [; ;SystemTime.h: 134: extern void SysTimeResume(void);
-[; ;SIM800x_SDM.h: 107: extern void SIM800xSDMInit(uint32_t br);
-[; ;SIM800x_SDM.h: 117: extern void SIM800xSDMResume(void);
-[; ;SIM800x_SDM.h: 128: extern void SIM800xSDMSuspend(void);
-[; ;SIM800x_SDM.h: 140: extern uint8_t SIM800xSDMIsSuspended(void);
-[; ;SIM800x_SDM.h: 150: extern uint16_t SIM800xSDMRxAvailable(void);
-[; ;SIM800x_SDM.h: 160: extern void SIM800xSDMSendByte(uint8_t data);
-[; ;SIM800x_SDM.h: 171: extern void SIM800xSDMSendBytes(uint8_t *data, uint16_t cnt);
-[; ;SIM800x_SDM.h: 181: extern void SIM800xSDMPrint(const char *str);
-[; ;SIM800x_SDM.h: 194: extern uint8_t SIM800xSDMReadByte(void);
-[; ;SIM800x_SDM.h: 207: extern uint16_t SIM800xSDMReadBytes(uint8_t *data, uint16_t cnt, uint32_t tout);
-[; ;SIM800x_SDM.h: 222: extern uint8_t SIM800xSDMPeek(uint8_t idx);
-[; ;SIM800x_SDM.h: 238: extern int SIM800xSDMReadF1Pkt(uint8_t *data);
-[; ;SIM800x_SDM.h: 254: extern int SIM800xSDMReadF2Pkt(uint8_t *data);
-[; ;SIM800x_SDM.h: 263: extern void SIM800xSDMFlush(void);
-[; ;SIM800x_SDM.h: 275: extern void SIM800xSDMSetTimeOut(uint32_t tout);
-[; ;SIM800x_SDM.h: 284: extern uint32_t SIM800xSDMGetTimeOut(void);
-[; ;SIM800x_SDM.h: 296: extern void SIM800xSDMCallBack(void);
+[; ;SIM800x_SDM.h: 102: extern void SIM800xSDMInit(void);
+[; ;SIM800x_SDM.h: 112: extern void SIM800xSDMResume(void);
+[; ;SIM800x_SDM.h: 123: extern void SIM800xSDMSuspend(void);
+[; ;SIM800x_SDM.h: 135: extern uint8_t SIM800xSDMIsSuspended(void);
+[; ;SIM800x_SDM.h: 145: extern uint16_t SIM800xSDMRxAvailable(void);
+[; ;SIM800x_SDM.h: 155: extern void SIM800xSDMSendByte(uint8_t data);
+[; ;SIM800x_SDM.h: 166: extern void SIM800xSDMSendBytes(uint8_t *data, uint16_t cnt);
+[; ;SIM800x_SDM.h: 176: extern void SIM800xSDMPrint(const char *str);
+[; ;SIM800x_SDM.h: 189: extern uint8_t SIM800xSDMReadByte(void);
+[; ;SIM800x_SDM.h: 202: extern uint16_t SIM800xSDMReadBytes(uint8_t *data, uint16_t cnt, uint32_t tout);
+[; ;SIM800x_SDM.h: 217: extern uint8_t SIM800xSDMPeek(uint8_t idx);
+[; ;SIM800x_SDM.h: 233: extern int SIM800xSDMReadF1Pkt(uint8_t *data);
+[; ;SIM800x_SDM.h: 249: extern int SIM800xSDMReadF2Pkt(uint8_t *data);
+[; ;SIM800x_SDM.h: 258: extern void SIM800xSDMFlush(void);
+[; ;SIM800x_SDM.h: 270: extern void SIM800xSDMSetTimeOut(uint32_t tout);
+[; ;SIM800x_SDM.h: 279: extern uint32_t SIM800xSDMGetTimeOut(void);
+[; ;SIM800x_SDM.h: 291: extern void SIM800xSDMCallBack(void);
 [; ;SIM800x_Types.h: 41: typedef enum
 [; ;SIM800x_Types.h: 42: {
 [; ;SIM800x_Types.h: 44: SIM800X_OK = 0,
@@ -2664,13 +2668,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdio.h: 190: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
 [; ;stdio.h: 194: extern int sprintf(char *, const char *, ...);
 [; ;stdio.h: 195: extern int printf(const char *, ...);
-[; ;SIM800x.h: 73: extern SIM800x_APIStatusType SIM800xInit(uint32_t br);
-[; ;SIM800x.h: 91: extern SIM800x_APIStatusType SIM800xReset(void);
-[; ;SIM800x.h: 107: extern SIM800x_APIStatusType SIM800xPWROn(void);
-[; ;SIM800x.h: 123: extern SIM800x_APIStatusType SIM800xPWROff(void);
-[; ;SIM800x.h: 140: extern SIM800x_APIStatusType SIM800xSetBaudRate(uint32_t br);
-[; ;SIM800x.h: 155: extern SIM800x_APIStatusType SIM800xGetState(void);
-[; ;SIM800x.h: 173: extern SIM800x_APIStatusType SIM800xOff(void);
+[; ;SIM800x.h: 75: extern SIM800x_APIStatusType SIM800xInit(void);
+[; ;SIM800x.h: 93: extern SIM800x_APIStatusType SIM800xReset(void);
+[; ;SIM800x.h: 109: extern SIM800x_APIStatusType SIM800xPWROn(void);
+[; ;SIM800x.h: 125: extern SIM800x_APIStatusType SIM800xPWROff(void);
+[; ;SIM800x.h: 142: extern SIM800x_APIStatusType SIM800xSetBaudRate(uint32_t br);
+[; ;SIM800x.h: 157: extern SIM800x_APIStatusType SIM800xGetState(void);
+[; ;SIM800x.h: 175: extern SIM800x_APIStatusType SIM800xOff(void);
 [; ;string.h: 14: extern void * memcpy(void *, const void *, size_t);
 [; ;string.h: 15: extern void * memmove(void *, const void *, size_t);
 [; ;string.h: 16: extern void * memset(void *, int, size_t);
@@ -2745,247 +2749,253 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ApplicationExample.c: 35: {
 [e :U _SystemInit ]
 [f ]
-[; ;ApplicationExample.c: 36: SoftUARTInit();
+[; ;ApplicationExample.c: 36: SystimeInit();
 "36
-[e ( _SoftUARTInit ..  ]
-[; ;ApplicationExample.c: 38: if(SIM800xInit(9600) == SIM800X_OK)
+[e ( _SystimeInit ..  ]
+[; ;ApplicationExample.c: 37: USARTAsyncInit(103);
+"37
+[e ( _USARTAsyncInit (1 -> -> 103 `i `uc ]
+[; ;ApplicationExample.c: 38: SoftUARTInit();
 "38
-[e $ ! == -> ( _SIM800xInit (1 -> -> -> 9600 `i `l `ul `i -> . `E2115 0 `i 244  ]
-[; ;ApplicationExample.c: 39: {
-"39
-{
-[; ;ApplicationExample.c: 40: SoftUARTPrint("Modem Initialized.\r\r");
+[e ( _SoftUARTInit ..  ]
+[; ;ApplicationExample.c: 40: if(SIM800xInit() == SIM800X_OK)
 "40
-[e ( _SoftUARTPrint (1 :s 1C ]
-[; ;ApplicationExample.c: 44: SoftUARTPrint("Setting IP configurations...\r");
-"44
-[e ( _SoftUARTPrint (1 :s 2C ]
-[; ;ApplicationExample.c: 45: if(SIM800xIPSetConnectionType(1, "GPRS") == SIM800X_OK)
-"45
-[e $ ! == -> ( _SIM800xIPSetConnectionType (2 , -> -> 1 `i `uc :s 3C `i -> . `E2115 0 `i 245  ]
-[; ;ApplicationExample.c: 46: {
-"46
+[e $ ! == -> ( _SIM800xInit ..  `i -> . `E2115 0 `i 244  ]
+[; ;ApplicationExample.c: 41: {
+"41
 {
-[; ;ApplicationExample.c: 47: if(SIM800xIPSetAPN(1, "Internet") == SIM800X_OK)
+[; ;ApplicationExample.c: 42: SoftUARTPrint("Modem Initialized.\r\r");
+"42
+[e ( _SoftUARTPrint (1 :s 1C ]
+[; ;ApplicationExample.c: 46: SoftUARTPrint("Setting IP configurations...\r");
+"46
+[e ( _SoftUARTPrint (1 :s 2C ]
+[; ;ApplicationExample.c: 47: if(SIM800xIPSetConnectionType(1, "GPRS") == SIM800X_OK)
 "47
-[e $ ! == -> ( _SIM800xIPSetAPN (2 , -> -> 1 `i `uc :s 4C `i -> . `E2115 0 `i 246  ]
+[e $ ! == -> ( _SIM800xIPSetConnectionType (2 , -> -> 1 `i `uc :s 3C `i -> . `E2115 0 `i 245  ]
 [; ;ApplicationExample.c: 48: {
 "48
 {
-[; ;ApplicationExample.c: 49: if(SIM800xIPOpen(1) == SIM800X_OK)
+[; ;ApplicationExample.c: 49: if(SIM800xIPSetAPN(1, "Internet") == SIM800X_OK)
 "49
-[e $ ! == -> ( _SIM800xIPOpen (1 -> -> 1 `i `uc `i -> . `E2115 0 `i 247  ]
+[e $ ! == -> ( _SIM800xIPSetAPN (2 , -> -> 1 `i `uc :s 4C `i -> . `E2115 0 `i 246  ]
 [; ;ApplicationExample.c: 50: {
 "50
 {
+[; ;ApplicationExample.c: 51: if(SIM800xIPOpen(1) == SIM800X_OK)
 "51
-[v _ip `uc ~T0 @X0 -> 20 `i a ]
-[; ;ApplicationExample.c: 51: char ip[20];
-[; ;ApplicationExample.c: 52: SoftUARTPrint("Done.\r\r");
+[e $ ! == -> ( _SIM800xIPOpen (1 -> -> 1 `i `uc `i -> . `E2115 0 `i 247  ]
+[; ;ApplicationExample.c: 52: {
 "52
-[e ( _SoftUARTPrint (1 :s 5C ]
-[; ;ApplicationExample.c: 53: SIM800xIPGetState(1, ip);
-"53
-[e ( _SIM800xIPGetState (2 , -> -> 1 `i `uc &U _ip ]
-[; ;ApplicationExample.c: 54: SoftUARTPrint("Bearer profile Activated, IP: ");
-"54
-[e ( _SoftUARTPrint (1 :s 6C ]
-[; ;ApplicationExample.c: 55: SoftUARTPrint(ip);
-"55
-[e ( _SoftUARTPrint (1 -> &U _ip `*Cuc ]
-[; ;ApplicationExample.c: 56: SoftUARTPrint("\r\r");
-"56
-[e ( _SoftUARTPrint (1 :s 7C ]
-"57
-[v _err `ui ~T0 @X0 1 a ]
-[; ;ApplicationExample.c: 57: uint16_t err;
-[; ;ApplicationExample.c: 61: SoftUARTPrint("Setting HTTP configurations...\r");
-"61
-[e ( _SoftUARTPrint (1 :s 8C ]
-[; ;ApplicationExample.c: 62: if(SIM800xHTTPInit(&err) == SIM800X_OK)
-"62
-[e $ ! == -> ( _SIM800xHTTPInit (1 &U _err `i -> . `E2115 0 `i 248  ]
-[; ;ApplicationExample.c: 63: {
-"63
 {
-[; ;ApplicationExample.c: 64: if(SIM800xHTTPSetURL("http://backend.thinger.io/v3/users/FirmwareEngineers/devices/SIM800L/callback/data?authorization=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODAzNjA0NzAsImlhdCI6MTY4MDM1MzI3MCwicm9sZSI6InVzZXIiLCJ1c3IiOiJGaXJtd2FyZUVuZ2luZW
+"53
+[v _ip `uc ~T0 @X0 -> 20 `i a ]
+[; ;ApplicationExample.c: 53: char ip[20];
+[; ;ApplicationExample.c: 54: SoftUARTPrint("Done.\r\r");
+"54
+[e ( _SoftUARTPrint (1 :s 5C ]
+[; ;ApplicationExample.c: 55: SIM800xIPGetState(1, ip);
+"55
+[e ( _SIM800xIPGetState (2 , -> -> 1 `i `uc &U _ip ]
+[; ;ApplicationExample.c: 56: SoftUARTPrint("Bearer profile Activated, IP: ");
+"56
+[e ( _SoftUARTPrint (1 :s 6C ]
+[; ;ApplicationExample.c: 57: SoftUARTPrint(ip);
+"57
+[e ( _SoftUARTPrint (1 -> &U _ip `*Cuc ]
+[; ;ApplicationExample.c: 58: SoftUARTPrint("\r\r");
+"58
+[e ( _SoftUARTPrint (1 :s 7C ]
+"59
+[v _err `ui ~T0 @X0 1 a ]
+[; ;ApplicationExample.c: 59: uint16_t err;
+[; ;ApplicationExample.c: 63: SoftUARTPrint("Setting HTTP configurations...\r");
+"63
+[e ( _SoftUARTPrint (1 :s 8C ]
+[; ;ApplicationExample.c: 64: if(SIM800xHTTPInit(&err) == SIM800X_OK)
 "64
-[e $ ! == -> ( _SIM800xHTTPSetURL (2 , :s 9C &U _err `i -> . `E2115 0 `i 249  ]
+[e $ ! == -> ( _SIM800xHTTPInit (1 &U _err `i -> . `E2115 0 `i 248  ]
 [; ;ApplicationExample.c: 65: {
 "65
 {
-[; ;ApplicationExample.c: 66: if(SIM800xHTTPSetContent("application/json", &err) == SIM800X_OK)
+[; ;ApplicationExample.c: 66: if(SIM800xHTTPSetURL("http://backend.thinger.io/v3/users/FirmwareEngineers/devices/SIM800L/callback/data?authorization=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODAzNjA0NzAsImlhdCI6MTY4MDM1MzI3MCwicm9sZSI6InVzZXIiLCJ1c3IiOiJGaXJtd2FyZUVuZ2luZW
 "66
-[e $ ! == -> ( _SIM800xHTTPSetContent (2 , :s 10C &U _err `i -> . `E2115 0 `i 250  ]
+[e $ ! == -> ( _SIM800xHTTPSetURL (2 , :s 9C &U _err `i -> . `E2115 0 `i 249  ]
 [; ;ApplicationExample.c: 67: {
 "67
 {
-[; ;ApplicationExample.c: 68: SoftUARTPrint("Done.\r\r");
+[; ;ApplicationExample.c: 68: if(SIM800xHTTPSetContent("application/json", &err) == SIM800X_OK)
 "68
+[e $ ! == -> ( _SIM800xHTTPSetContent (2 , :s 10C &U _err `i -> . `E2115 0 `i 250  ]
+[; ;ApplicationExample.c: 69: {
+"69
+{
+[; ;ApplicationExample.c: 70: SoftUARTPrint("Done.\r\r");
+"70
 [e ( _SoftUARTPrint (1 :s 11C ]
-[; ;ApplicationExample.c: 73: AddEntryToJsonObject(txmessage, "Engine Temperature (C)", "30", &cpos);
-"73
-[e ( _AddEntryToJsonObject (4 , , , &U _txmessage :s 12C :s 13C &U _cpos ]
-[; ;ApplicationExample.c: 74: AddEntryToJsonObject(txmessage, "RPM", "3500", &cpos);
-"74
-[e ( _AddEntryToJsonObject (4 , , , &U _txmessage :s 14C :s 15C &U _cpos ]
-[; ;ApplicationExample.c: 75: AddEntryToJsonObject(txmessage, "Vehicle Speed (MPH)", "35", &cpos);
+[; ;ApplicationExample.c: 75: AddEntryToJsonObject(txmessage, "Engine Temperature (C)", "30", &cpos);
 "75
-[e ( _AddEntryToJsonObject (4 , , , &U _txmessage :s 16C :s 17C &U _cpos ]
-[; ;ApplicationExample.c: 76: AddEntryToJsonObject(txmessage, "Fuel Level (%)", "50", &cpos);
+[e ( _AddEntryToJsonObject (4 , , , &U _txmessage :s 12C :s 13C &U _cpos ]
+[; ;ApplicationExample.c: 76: AddEntryToJsonObject(txmessage, "RPM", "3500", &cpos);
 "76
+[e ( _AddEntryToJsonObject (4 , , , &U _txmessage :s 14C :s 15C &U _cpos ]
+[; ;ApplicationExample.c: 77: AddEntryToJsonObject(txmessage, "Vehicle Speed (MPH)", "35", &cpos);
+"77
+[e ( _AddEntryToJsonObject (4 , , , &U _txmessage :s 16C :s 17C &U _cpos ]
+[; ;ApplicationExample.c: 78: AddEntryToJsonObject(txmessage, "Fuel Level (%)", "50", &cpos);
+"78
 [e ( _AddEntryToJsonObject (4 , , , &U _txmessage :s 18C :s 19C &U _cpos ]
-[; ;ApplicationExample.c: 81: SoftUARTPrint("System Initialization completed.\r\r");
-"81
+[; ;ApplicationExample.c: 83: SoftUARTPrint("System Initialization completed.\r\r");
+"83
 [e ( _SoftUARTPrint (1 :s 20C ]
-[; ;ApplicationExample.c: 82: return SIM800X_OK;
-"82
+[; ;ApplicationExample.c: 84: return SIM800X_OK;
+"84
 [e ) -> . `E2115 0 `uc ]
 [e $UE 243  ]
-"83
-}
-[e :U 250 ]
-"84
-}
-[e :U 249 ]
 "85
 }
-[e :U 248 ]
+[e :U 250 ]
 "86
 }
-[e :U 247 ]
+[e :U 249 ]
 "87
 }
-[e :U 246 ]
+[e :U 248 ]
 "88
 }
-[e :U 245 ]
+[e :U 247 ]
 "89
 }
+[e :U 246 ]
+"90
+}
+[e :U 245 ]
+"91
+}
 [e :U 244 ]
-[; ;ApplicationExample.c: 83: }
-[; ;ApplicationExample.c: 84: }
 [; ;ApplicationExample.c: 85: }
 [; ;ApplicationExample.c: 86: }
 [; ;ApplicationExample.c: 87: }
 [; ;ApplicationExample.c: 88: }
 [; ;ApplicationExample.c: 89: }
-[; ;ApplicationExample.c: 90: SoftUARTPrint("System Initialization failed.\r\r");
-"90
+[; ;ApplicationExample.c: 90: }
+[; ;ApplicationExample.c: 91: }
+[; ;ApplicationExample.c: 92: SoftUARTPrint("System Initialization failed.\r\r");
+"92
 [e ( _SoftUARTPrint (1 :s 21C ]
-[; ;ApplicationExample.c: 91: return 1;
-"91
+[; ;ApplicationExample.c: 93: return 1;
+"93
 [e ) -> -> 1 `i `uc ]
 [e $UE 243  ]
-[; ;ApplicationExample.c: 93: }
-"93
+[; ;ApplicationExample.c: 95: }
+"95
 [e :UE 243 ]
 }
-"96
+"98
 [v _SystemTask `(v ~T0 @X0 1 ef ]
-"97
+"99
 {
-[; ;ApplicationExample.c: 96: void SystemTask(void)
-[; ;ApplicationExample.c: 97: {
+[; ;ApplicationExample.c: 98: void SystemTask(void)
+[; ;ApplicationExample.c: 99: {
 [e :U _SystemTask ]
 [f ]
-"98
+"100
 [v _cmd `uc ~T0 @X0 1 a ]
-[; ;ApplicationExample.c: 98: uint8_t cmd = 0;
+[; ;ApplicationExample.c: 100: uint8_t cmd = 0;
 [e = _cmd -> -> 0 `i `uc ]
-"99
+"101
 [v _scode `ui ~T0 @X0 1 a ]
-[; ;ApplicationExample.c: 99: uint16_t scode = 0, errcode = 0;
+[; ;ApplicationExample.c: 101: uint16_t scode = 0, errcode = 0;
 [e = _scode -> -> 0 `i `ui ]
 [v _errcode `ui ~T0 @X0 1 a ]
 [e = _errcode -> -> 0 `i `ui ]
-"100
-[v _cnt `ul ~T0 @X0 1 a ]
-[; ;ApplicationExample.c: 100: uint32_t cnt = 0;
-[e = _cnt -> -> -> 0 `i `l `ul ]
-[; ;ApplicationExample.c: 101: if(SoftUARTRxAvailable())
-"101
-[e $ ! != -> ( _SoftUARTRxAvailable ..  `i -> -> -> 0 `i `uc `i 252  ]
-[; ;ApplicationExample.c: 102: cmd = (uint8_t)SoftUARTReceiveByte();
 "102
+[v _cnt `ul ~T0 @X0 1 a ]
+[; ;ApplicationExample.c: 102: uint32_t cnt = 0;
+[e = _cnt -> -> -> 0 `i `l `ul ]
+[; ;ApplicationExample.c: 103: if(SoftUARTRxAvailable())
+"103
+[e $ ! != -> ( _SoftUARTRxAvailable ..  `i -> -> -> 0 `i `uc `i 252  ]
+[; ;ApplicationExample.c: 104: cmd = (uint8_t)SoftUARTReceiveByte();
+"104
 [e = _cmd -> ( _SoftUARTReceiveByte ..  `uc ]
 [e :U 252 ]
-[; ;ApplicationExample.c: 103: if(cmd == '1')
-"103
+[; ;ApplicationExample.c: 105: if(cmd == '1')
+"105
 [e $ ! == -> _cmd `ui -> 49 `ui 253  ]
-[; ;ApplicationExample.c: 104: {
-"104
-{
-[; ;ApplicationExample.c: 106: SoftUARTPrint("Sending message to thinger.io...\r");
+[; ;ApplicationExample.c: 106: {
 "106
-[e ( _SoftUARTPrint (1 :s 22C ]
-[; ;ApplicationExample.c: 108: SIM800xHTTPInputData(txmessage, (uint32_t)(cpos + 1), 5000, &errcode);
-"108
-[e ( _SIM800xHTTPInputData (4 , , , &U _txmessage -> + _cpos -> -> 1 `i `ui `ul -> -> -> 5000 `i `l `ul &U _errcode ]
-[; ;ApplicationExample.c: 110: if(SIM800xHTTPAction(1, &scode, &cnt, 10000, &errcode) == SIM800X_OK)
-"110
-[e $ ! == -> ( _SIM800xHTTPAction (4 , , , , -> -> 1 `i `uc &U _scode &U _cnt -> -> -> 10000 `i `l `ul &U _errcode `i -> . `E2115 0 `i 254  ]
-[; ;ApplicationExample.c: 111: {
-"111
 {
-[; ;ApplicationExample.c: 112: if(SIM800xHTTPRead(rxmessage, 0, cnt, &cnt, &errcode) == SIM800X_OK)
+[; ;ApplicationExample.c: 108: SoftUARTPrint("Sending message to thinger.io...\r");
+"108
+[e ( _SoftUARTPrint (1 :s 22C ]
+[; ;ApplicationExample.c: 110: SIM800xHTTPInputData(txmessage, (uint32_t)(cpos + 1), 5000, &errcode);
+"110
+[e ( _SIM800xHTTPInputData (4 , , , &U _txmessage -> + _cpos -> -> 1 `i `ui `ul -> -> -> 5000 `i `l `ul &U _errcode ]
+[; ;ApplicationExample.c: 112: if(SIM800xHTTPAction(1, &scode, &cnt, 10000, &errcode) == SIM800X_OK)
 "112
-[e $ ! == -> ( _SIM800xHTTPRead (4 , , , , &U _rxmessage -> -> -> 0 `i `l `ul _cnt &U _cnt &U _errcode `i -> . `E2115 0 `i 255  ]
+[e $ ! == -> ( _SIM800xHTTPAction (4 , , , , -> -> 1 `i `uc &U _scode &U _cnt -> -> -> 10000 `i `l `ul &U _errcode `i -> . `E2115 0 `i 254  ]
 [; ;ApplicationExample.c: 113: {
 "113
 {
+[; ;ApplicationExample.c: 114: if(SIM800xHTTPRead(rxmessage, 0, cnt, &cnt, &errcode) == SIM800X_OK)
 "114
-[v _msg `uc ~T0 @X0 -> 20 `i a ]
-[; ;ApplicationExample.c: 114: char msg[20];
-[; ;ApplicationExample.c: 115: sprintf(msg, "HTTP response code: %u\r", scode);
+[e $ ! == -> ( _SIM800xHTTPRead (4 , , , , &U _rxmessage -> -> -> 0 `i `l `ul _cnt &U _cnt &U _errcode `i -> . `E2115 0 `i 255  ]
+[; ;ApplicationExample.c: 115: {
 "115
-[e ( _sprintf (1 , (. , &U _msg :s 23C _scode ]
-[; ;ApplicationExample.c: 116: SoftUARTPrint(msg);
+{
 "116
-[e ( _SoftUARTPrint (1 -> &U _msg `*Cuc ]
-[; ;ApplicationExample.c: 117: sprintf(msg, "Received data length: %ld\r", cnt);
+[v _msg `uc ~T0 @X0 -> 20 `i a ]
+[; ;ApplicationExample.c: 116: char msg[20];
+[; ;ApplicationExample.c: 117: sprintf(msg, "HTTP response code: %u\r", scode);
 "117
-[e ( _sprintf (1 , (. , &U _msg :s 24C _cnt ]
+[e ( _sprintf (1 , (. , &U _msg :s 23C _scode ]
 [; ;ApplicationExample.c: 118: SoftUARTPrint(msg);
 "118
 [e ( _SoftUARTPrint (1 -> &U _msg `*Cuc ]
-[; ;ApplicationExample.c: 119: SoftUARTPrint("Data: ");
+[; ;ApplicationExample.c: 119: sprintf(msg, "Received data length: %ld\r", cnt);
 "119
-[e ( _SoftUARTPrint (1 :s 25C ]
+[e ( _sprintf (1 , (. , &U _msg :s 24C _cnt ]
 [; ;ApplicationExample.c: 120: SoftUARTPrint(msg);
 "120
 [e ( _SoftUARTPrint (1 -> &U _msg `*Cuc ]
-[; ;ApplicationExample.c: 121: SoftUARTPrint("\r\r");
+[; ;ApplicationExample.c: 121: SoftUARTPrint("Data: ");
 "121
-[e ( _SoftUARTPrint (1 :s 26C ]
+[e ( _SoftUARTPrint (1 :s 25C ]
+[; ;ApplicationExample.c: 122: SoftUARTPrint(msg);
 "122
+[e ( _SoftUARTPrint (1 -> &U _msg `*Cuc ]
+[; ;ApplicationExample.c: 123: SoftUARTPrint("\r\r");
+"123
+[e ( _SoftUARTPrint (1 :s 26C ]
+"124
 }
 [e :U 255 ]
-"123
+"125
 }
-[; ;ApplicationExample.c: 122: }
-[; ;ApplicationExample.c: 123: }else
+[; ;ApplicationExample.c: 124: }
+[; ;ApplicationExample.c: 125: }else
 [e $U 256  ]
 [e :U 254 ]
-[; ;ApplicationExample.c: 124: {
-"124
-{
-[; ;ApplicationExample.c: 125: SoftUARTPrint("Sending failed.\r");
-"125
-[e ( _SoftUARTPrint (1 :s 27C ]
+[; ;ApplicationExample.c: 126: {
 "126
+{
+[; ;ApplicationExample.c: 127: SoftUARTPrint("Sending failed.\r");
+"127
+[e ( _SoftUARTPrint (1 :s 27C ]
+"128
 }
 [e :U 256 ]
-[; ;ApplicationExample.c: 126: }
-[; ;ApplicationExample.c: 128: cmd = 0;
-"128
+[; ;ApplicationExample.c: 128: }
+[; ;ApplicationExample.c: 130: cmd = 0;
+"130
 [e = _cmd -> -> 0 `i `uc ]
-"129
+"131
 }
 [e :U 253 ]
-[; ;ApplicationExample.c: 129: }
 [; ;ApplicationExample.c: 131: }
-"131
+[; ;ApplicationExample.c: 133: }
+"133
 [e :UE 251 ]
 }
 [p f _sprintf 8389776 ]

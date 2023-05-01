@@ -3927,91 +3927,91 @@ extern void SoftUARTFlushRx(void);
 #pragma intrinsic(_SoftUARTCallBack)
 extern void SoftUARTCallBack(void);
 
-# 195 "C:/EmbeddedDevOps/M8M_APIs/PIC18.X/Src/../../../WWM_APIs/SIMCOM/SIM800x.X/Inc/../../../../M8M_APIs/PIC18.X/Inc/USART.h"
+# 196 "C:/EmbeddedDevOps/M8M_APIs/PIC18.X/Src/../../../WWM_APIs/SIMCOM/SIM800x.X/Inc/../../../../M8M_APIs/PIC18.X/Inc/USART.h"
 extern void USARTSetBGR(uint8_t bgr);
 
-# 219
+# 220
 extern void USARTSetBaudRate(uint32_t baud);
 
-# 247
+# 248
 extern void USARTInit(ConfigType cfg);
 
-# 277
+# 275
 extern void USARTAsyncInit(uint8_t bgr);
 
-# 287
+# 285
 extern void USARTTransmitByte9(uint16_t data);
 
-# 298
+# 296
 extern void USARTTransmitBytes(uint8_t *data, uint16_t cnt);
 
-# 309
+# 307
 extern void USARTTransmitBytes9(uint16_t *data, uint16_t cnt);
 
-# 319
+# 317
 extern void USARTPrint(const char *str);
 
-# 329
+# 327
 extern uint8_t USARTReceiveByte(void);
 
-# 339
+# 337
 extern uint16_t USARTReceiveByte9(void);
 
-# 351
+# 349
 extern uint16_t USARTReceiveBytes(uint8_t *data, uint16_t cnt, uint32_t tout);
 
-# 363
+# 361
 extern uint16_t USARTReceiveBytes9(uint16_t *data, uint16_t cnt, uint32_t tout);
 
-# 107 "C:/EmbeddedDevOps/M8M_APIs/PIC18.X/Src/../../../WWM_APIs/SIMCOM/SIM800x.X/Inc/SIM800x_SDM.h"
-extern void SIM800xSDMInit(uint32_t br);
+# 102 "C:/EmbeddedDevOps/M8M_APIs/PIC18.X/Src/../../../WWM_APIs/SIMCOM/SIM800x.X/Inc/SIM800x_SDM.h"
+extern void SIM800xSDMInit(void);
 
-# 117
+# 112
 extern void SIM800xSDMResume(void);
 
-# 128
+# 123
 extern void SIM800xSDMSuspend(void);
 
-# 140
+# 135
 extern uint8_t SIM800xSDMIsSuspended(void);
 
-# 150
+# 145
 extern uint16_t SIM800xSDMRxAvailable(void);
 
-# 160
+# 155
 extern void SIM800xSDMSendByte(uint8_t data);
 
-# 171
+# 166
 extern void SIM800xSDMSendBytes(uint8_t *data, uint16_t cnt);
 
-# 181
+# 176
 extern void SIM800xSDMPrint(const char *str);
 
-# 194
+# 189
 extern uint8_t SIM800xSDMReadByte(void);
 
-# 207
+# 202
 extern uint16_t SIM800xSDMReadBytes(uint8_t *data, uint16_t cnt, uint32_t tout);
 
-# 222
+# 217
 extern uint8_t SIM800xSDMPeek(uint8_t idx);
 
-# 238
+# 233
 extern int SIM800xSDMReadF1Pkt(uint8_t *data);
 
-# 254
+# 249
 extern int SIM800xSDMReadF2Pkt(uint8_t *data);
 
-# 263
+# 258
 extern void SIM800xSDMFlush(void);
 
-# 275
+# 270
 extern void SIM800xSDMSetTimeOut(uint32_t tout);
 
-# 284
+# 279
 extern uint32_t SIM800xSDMGetTimeOut(void);
 
-# 296
+# 291
 extern void SIM800xSDMCallBack(void);
 
 # 41 "C:/EmbeddedDevOps/M8M_APIs/PIC18.X/Src/../../../WWM_APIs/SIMCOM/SIM800x.X/Inc/SIM800x_Types.h"
@@ -4379,25 +4379,25 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
 
-# 73 "C:/EmbeddedDevOps/M8M_APIs/PIC18.X/Src/../../../WWM_APIs/SIMCOM/SIM800x.X/Inc/SIM800x.h"
-extern SIM800x_APIStatusType SIM800xInit(uint32_t br);
+# 75 "C:/EmbeddedDevOps/M8M_APIs/PIC18.X/Src/../../../WWM_APIs/SIMCOM/SIM800x.X/Inc/SIM800x.h"
+extern SIM800x_APIStatusType SIM800xInit(void);
 
-# 91
+# 93
 extern SIM800x_APIStatusType SIM800xReset(void);
 
-# 107
+# 109
 extern SIM800x_APIStatusType SIM800xPWROn(void);
 
-# 123
+# 125
 extern SIM800x_APIStatusType SIM800xPWROff(void);
 
-# 140
+# 142
 extern SIM800x_APIStatusType SIM800xSetBaudRate(uint32_t br);
 
-# 155
+# 157
 extern SIM800x_APIStatusType SIM800xGetState(void);
 
-# 173
+# 175
 extern SIM800x_APIStatusType SIM800xOff(void);
 
 # 65 "C:/EmbeddedDevOps/M8M_APIs/PIC18.X/Src/ISR.c"

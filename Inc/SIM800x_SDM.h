@@ -74,14 +74,13 @@ extern "C" {
 #define UARTSend(x)                     USARTTransmitByte(x)
 #define UARTRead()                      USARTReceiveByte()
 #define Tick()                          Tick_ms()
-#define TickInit()                      SystimeInit()
 #define wait(x)                         Wait_ms(x)
 #define SetBr(x)                        USARTSetBaudRate(x)
 #define SetPin(x,y)                     GPIOSetPin(x,y)
 #define ClearPin(x,y)                   GPIOClearPin(x,y)
 #define SetOutput(x,y)                  GPIOSetOutput(x,y)
 #define SetInput(x,y)                   GPIOSetInput(x,y)
-#if (SIM800X_CONFIG_ENABLE_DBG_SUART == 1)
+#if (CONFIG_ENABLE_DBG_SUART == 1)
 #define SUARTSend(x)                    SoftUARTTransmitByte(x)
 #define SUARTInit()                     SoftUARTInit()
 #define SUARTPrint(x)                   SoftUARTPrint(x)
@@ -94,17 +93,13 @@ extern "C" {
  * @brief   Initialize and enable the SDM driver
  * @note    This function will:
  *              - Enable all required device UART interrupt settings, depending on the architecture
- *              - Set communication baudrate
- * 
- * @note    Prior to using this function, make sure to define the global macro FOSC_MHZ or the OSC_MHZ (in SystemTime.h)
- *          constant, with the MCU crystal frequency in megahertz.
- * @param   br: UART communication baud rate constant value   
+ *   
  * @retval  none
  * 
  * @warning **When using the SDM on PIC18 devices, make sure not to let the RX pin floating. Use a pull-up instead.**
- * @warning **make sure to initialize the system Time API prior to calling this function.** 
+ * @warning **make sure to initialize the system Time API and the USART/UART library prior to calling this function.** 
  */ 
-extern void SIM800xSDMInit(uint32_t br);  
+extern void SIM800xSDMInit(void);  
 //-----------------------------------    
 
 //-----------------------------------

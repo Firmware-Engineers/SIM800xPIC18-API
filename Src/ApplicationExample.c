@@ -34,9 +34,10 @@ uint16_t cpos = 0;
 uint8_t SystemInit(void)
 {
     SystimeInit();                                                              //!< Initialize the System Time API
+    USARTAsyncInit(103);                                                        //!< Initialize the USART/UART library, br = 9600
     SoftUARTInit();                                                             //!< Initialize Software UART driver
     //---------    
-    if(SIM800xInit(9600) == SIM800X_OK)
+    if(SIM800xInit() == SIM800X_OK)
     {
         SoftUARTPrint("Modem Initialized.\r\r");
         //
